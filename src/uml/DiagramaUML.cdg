@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ClinicaUml">
+  <ClassDiagramComponents>
+    <Class name="IngresoUsuarios" package="Modelo" visibility="public" xPosition="1598.0" yPosition="162.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idIngreso" type="Integer" visibility="private"/>
+        <Field name="fechaingreso" type="Date" visibility="private"/>
+        <Field name="fechasalida" type="Date" visibility="private"/>
+        <Field name="rfcUsuario" type="Usuarios" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idIngreso"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdIngreso" returnType="Integer" visibility="public"/>
+        <Method name="setIdIngreso" returnType="Integer" visibility="public">
+          <Argument type="Integer" name="idIngreso"/>
+        </Method>
+        <Method name="getFechaingreso" returnType="Date" visibility="public"/>
+        <Method name="setFechaingreso" returnType="Date" visibility="public">
+          <Argument type="Date" name="fechaingreso"/>
+        </Method>
+        <Method name="getFechasalida" returnType="Date" visibility="public"/>
+        <Method name="setFechasalida" returnType="Date" visibility="public">
+          <Argument type="Date" name="fechasalida"/>
+        </Method>
+        <Method name="getRfcUsuario" returnType="Usuarios" visibility="public"/>
+        <Method name="setRfcUsuario" returnType="Usuarios" visibility="public">
+          <Argument type="Usuarios" name="rfcUsuario"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="Object" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Pacientes" package="Modelo" visibility="public" xPosition="570.0" yPosition="956.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="rfcPaciente" type="String" visibility="private"/>
+        <Field name="nombrepaciente" type="String" visibility="private"/>
+        <Field name="apellidospaciente" type="String" visibility="private"/>
+        <Field name="domiciliopaciente" type="String" visibility="private"/>
+        <Field name="telefono" type="Integer" visibility="private"/>
+        <Field name="rfcusuario" type="Usuarios" visibility="private"/>
+        <Field name="ingresoPacientesCollection" type="Collection&lt;IngresoPacientes&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="rfcPaciente"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="rfcPaciente"/>
+          <Argument type="String" name="nombrepaciente"/>
+          <Argument type="String" name="apellidospaciente"/>
+          <Argument type="String" name="domiciliopaciente"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRfcPaciente" returnType="String" visibility="public"/>
+        <Method name="setRfcPaciente" returnType="String" visibility="public">
+          <Argument type="String" name="rfcPaciente"/>
+        </Method>
+        <Method name="getNombrepaciente" returnType="String" visibility="public"/>
+        <Method name="setNombrepaciente" returnType="String" visibility="public">
+          <Argument type="String" name="nombrepaciente"/>
+        </Method>
+        <Method name="getApellidospaciente" returnType="String" visibility="public"/>
+        <Method name="setApellidospaciente" returnType="String" visibility="public">
+          <Argument type="String" name="apellidospaciente"/>
+        </Method>
+        <Method name="getDomiciliopaciente" returnType="String" visibility="public"/>
+        <Method name="setDomiciliopaciente" returnType="String" visibility="public">
+          <Argument type="String" name="domiciliopaciente"/>
+        </Method>
+        <Method name="getTelefono" returnType="Integer" visibility="public"/>
+        <Method name="setTelefono" returnType="Integer" visibility="public">
+          <Argument type="Integer" name="telefono"/>
+        </Method>
+        <Method name="getRfcusuario" returnType="Usuarios" visibility="public"/>
+        <Method name="setRfcusuario" returnType="Usuarios" visibility="public">
+          <Argument type="Usuarios" name="rfcusuario"/>
+        </Method>
+        <Method name="getIngresoPacientesCollection" returnType="Collection&lt;IngresoPacientes&gt;" visibility="public"/>
+        <Method name="setIngresoPacientesCollection" returnType="Collection&lt;IngresoPacientes&gt;" visibility="public">
+          <Argument type="Collection&lt;IngresoPacientes&gt;" name="ingresoPacientesCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="Object" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Servicioestomatologico" package="Modelo" visibility="public" xPosition="2328.0" yPosition="889.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idServEstom" type="Integer" visibility="private"/>
+        <Field name="svt" type="BigDecimal" visibility="private"/>
+        <Field name="fc" type="BigDecimal" visibility="private"/>
+        <Field name="fr" type="BigDecimal" visibility="private"/>
+        <Field name="ta" type="BigDecimal" visibility="private"/>
+        <Field name="glucosa" type="BigDecimal" visibility="private"/>
+        <Field name="peso" type="BigDecimal" visibility="private"/>
+        <Field name="altura" type="BigDecimal" visibility="private"/>
+        <Field name="pregunta1" type="String" visibility="private"/>
+        <Field name="pregunta2" type="String" visibility="private"/>
+        <Field name="pregunta3" type="String" visibility="private"/>
+        <Field name="idIngresopac" type="IngresoPacientes" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idServEstom"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idServEstom"/>
+          <Argument type="BigDecimal" name="svt"/>
+          <Argument type="BigDecimal" name="fc"/>
+          <Argument type="BigDecimal" name="fr"/>
+          <Argument type="BigDecimal" name="ta"/>
+          <Argument type="BigDecimal" name="glucosa"/>
+          <Argument type="BigDecimal" name="peso"/>
+          <Argument type="BigDecimal" name="altura"/>
+          <Argument type="String" name="pregunta1"/>
+          <Argument type="String" name="pregunta2"/>
+          <Argument type="String" name="pregunta3"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdServEstom" returnType="Integer" visibility="public"/>
+        <Method name="setIdServEstom" returnType="Integer" visibility="public">
+          <Argument type="Integer" name="idServEstom"/>
+        </Method>
+        <Method name="getSvt" returnType="BigDecimal" visibility="public"/>
+        <Method name="setSvt" returnType="BigDecimal" visibility="public">
+          <Argument type="BigDecimal" name="svt"/>
+        </Method>
+        <Method name="getFc" returnType="BigDecimal" visibility="public"/>
+        <Method name="setFc" returnType="BigDecimal" visibility="public">
+          <Argument type="BigDecimal" name="fc"/>
+        </Method>
+        <Method name="getFr" returnType="BigDecimal" visibility="public"/>
+        <Method name="setFr" returnType="BigDecimal" visibility="public">
+          <Argument type="BigDecimal" name="fr"/>
+        </Method>
+        <Method name="getTa" returnType="BigDecimal" visibility="public"/>
+        <Method name="setTa" returnType="BigDecimal" visibility="public">
+          <Argument type="BigDecimal" name="ta"/>
+        </Method>
+        <Method name="getGlucosa" returnType="BigDecimal" visibility="public"/>
+        <Method name="setGlucosa" returnType="BigDecimal" visibility="public">
+          <Argument type="BigDecimal" name="glucosa"/>
+        </Method>
+        <Method name="getPeso" returnType="BigDecimal" visibility="public"/>
+        <Method name="setPeso" returnType="BigDecimal" visibility="public">
+          <Argument type="BigDecimal" name="peso"/>
+        </Method>
+        <Method name="getAltura" returnType="BigDecimal" visibility="public"/>
+        <Method name="setAltura" returnType="BigDecimal" visibility="public">
+          <Argument type="BigDecimal" name="altura"/>
+        </Method>
+        <Method name="getPregunta1" returnType="String" visibility="public"/>
+        <Method name="setPregunta1" returnType="String" visibility="public">
+          <Argument type="String" name="pregunta1"/>
+        </Method>
+        <Method name="getPregunta2" returnType="String" visibility="public"/>
+        <Method name="setPregunta2" returnType="String" visibility="public">
+          <Argument type="String" name="pregunta2"/>
+        </Method>
+        <Method name="getPregunta3" returnType="String" visibility="public"/>
+        <Method name="setPregunta3" returnType="String" visibility="public">
+          <Argument type="String" name="pregunta3"/>
+        </Method>
+        <Method name="getIdIngresopac" returnType="IngresoPacientes" visibility="public"/>
+        <Method name="setIdIngresopac" returnType="IngresoPacientes" visibility="public">
+          <Argument type="IngresoPacientes" name="idIngresopac"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="Object" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="IngresoPacientes" package="Modelo" visibility="public" xPosition="357.0" yPosition="2066.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idIngresopac" type="Integer" visibility="private"/>
+        <Field name="fechaIngreso" type="Date" visibility="private"/>
+        <Field name="examenClinicoEstomatologicoCollection" type="Collection&lt;ExamenClinicoEstomatologico&gt;" visibility="private"/>
+        <Field name="anteceNoPatoCollection" type="Collection&lt;AnteceNoPato&gt;" visibility="private"/>
+        <Field name="exploracionfisicaCollection" type="Collection&lt;Exploracionfisica&gt;" visibility="private"/>
+        <Field name="cuestionarioEstomatologicoCollection" type="Collection&lt;CuestionarioEstomatologico&gt;" visibility="private"/>
+        <Field name="anteceHereFamiCollection" type="Collection&lt;AnteceHereFami&gt;" visibility="private"/>
+        <Field name="antecePatoCollection" type="Collection&lt;AntecePato&gt;" visibility="private"/>
+        <Field name="rfcPaciente" type="Pacientes" visibility="private"/>
+        <Field name="servicioestomatologicoCollection" type="Collection&lt;Servicioestomatologico&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idIngresopac"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdIngresopac" returnType="Integer" visibility="public"/>
+        <Method name="setIdIngresopac" returnType="Integer" visibility="public">
+          <Argument type="Integer" name="idIngresopac"/>
+        </Method>
+        <Method name="getFechaIngreso" returnType="Date" visibility="public"/>
+        <Method name="setFechaIngreso" returnType="Date" visibility="public">
+          <Argument type="Date" name="fechaIngreso"/>
+        </Method>
+        <Method name="getExamenClinicoEstomatologicoCollection" returnType="Collection&lt;ExamenClinicoEstomatologico&gt;" visibility="public"/>
+        <Method name="setExamenClinicoEstomatologicoCollection" returnType="Collection&lt;ExamenClinicoEstomatologico&gt;" visibility="public">
+          <Argument type="Collection&lt;ExamenClinicoEstomatologico&gt;" name="examenClinicoEstomatologicoCollection"/>
+        </Method>
+        <Method name="getAnteceNoPatoCollection" returnType="Collection&lt;AnteceNoPato&gt;" visibility="public"/>
+        <Method name="setAnteceNoPatoCollection" returnType="Collection&lt;AnteceNoPato&gt;" visibility="public">
+          <Argument type="Collection&lt;AnteceNoPato&gt;" name="anteceNoPatoCollection"/>
+        </Method>
+        <Method name="getExploracionfisicaCollection" returnType="Collection&lt;Exploracionfisica&gt;" visibility="public"/>
+        <Method name="setExploracionfisicaCollection" returnType="Collection&lt;Exploracionfisica&gt;" visibility="public">
+          <Argument type="Collection&lt;Exploracionfisica&gt;" name="exploracionfisicaCollection"/>
+        </Method>
+        <Method name="getCuestionarioEstomatologicoCollection" returnType="Collection&lt;CuestionarioEstomatologico&gt;" visibility="public"/>
+        <Method name="setCuestionarioEstomatologicoCollection" returnType="Collection&lt;CuestionarioEstomatologico&gt;" visibility="public">
+          <Argument type="Collection&lt;CuestionarioEstomatologico&gt;" name="cuestionarioEstomatologicoCollection"/>
+        </Method>
+        <Method name="getAnteceHereFamiCollection" returnType="Collection&lt;AnteceHereFami&gt;" visibility="public"/>
+        <Method name="setAnteceHereFamiCollection" returnType="Collection&lt;AnteceHereFami&gt;" visibility="public">
+          <Argument type="Collection&lt;AnteceHereFami&gt;" name="anteceHereFamiCollection"/>
+        </Method>
+        <Method name="getAntecePatoCollection" returnType="Collection&lt;AntecePato&gt;" visibility="public"/>
+        <Method name="setAntecePatoCollection" returnType="Collection&lt;AntecePato&gt;" visibility="public">
+          <Argument type="Collection&lt;AntecePato&gt;" name="antecePatoCollection"/>
+        </Method>
+        <Method name="getRfcPaciente" returnType="Pacientes" visibility="public"/>
+        <Method name="setRfcPaciente" returnType="Pacientes" visibility="public">
+          <Argument type="Pacientes" name="rfcPaciente"/>
+        </Method>
+        <Method name="getServicioestomatologicoCollection" returnType="Collection&lt;Servicioestomatologico&gt;" visibility="public"/>
+        <Method name="setServicioestomatologicoCollection" returnType="Collection&lt;Servicioestomatologico&gt;" visibility="public">
+          <Argument type="Collection&lt;Servicioestomatologico&gt;" name="servicioestomatologicoCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="Object" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Exploracionfisica" package="Modelo" visibility="public" xPosition="3568.0" yPosition="1830.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idexploracion" type="Integer" visibility="private"/>
+        <Field name="cara" type="String" visibility="private"/>
+        <Field name="cuello" type="String" visibility="private"/>
+        <Field name="cabeza" type="String" visibility="private"/>
+        <Field name="aparienciaFisica" type="String" visibility="private"/>
+        <Field name="estadoActual" type="String" visibility="private"/>
+        <Field name="observaciones" type="String" visibility="private"/>
+        <Field name="idIngresopac" type="IngresoPacientes" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idexploracion"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idexploracion"/>
+          <Argument type="String" name="cara"/>
+          <Argument type="String" name="cuello"/>
+          <Argument type="String" name="cabeza"/>
+          <Argument type="String" name="aparienciaFisica"/>
+          <Argument type="String" name="estadoActual"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdexploracion" returnType="Integer" visibility="public"/>
+        <Method name="setIdexploracion" returnType="Integer" visibility="public">
+          <Argument type="Integer" name="idexploracion"/>
+        </Method>
+        <Method name="getCara" returnType="String" visibility="public"/>
+        <Method name="setCara" returnType="String" visibility="public">
+          <Argument type="String" name="cara"/>
+        </Method>
+        <Method name="getCuello" returnType="String" visibility="public"/>
+        <Method name="setCuello" returnType="String" visibility="public">
+          <Argument type="String" name="cuello"/>
+        </Method>
+        <Method name="getCabeza" returnType="String" visibility="public"/>
+        <Method name="setCabeza" returnType="String" visibility="public">
+          <Argument type="String" name="cabeza"/>
+        </Method>
+        <Method name="getAparienciaFisica" returnType="String" visibility="public"/>
+        <Method name="setAparienciaFisica" returnType="String" visibility="public">
+          <Argument type="String" name="aparienciaFisica"/>
+        </Method>
+        <Method name="getEstadoActual" returnType="String" visibility="public"/>
+        <Method name="setEstadoActual" returnType="String" visibility="public">
+          <Argument type="String" name="estadoActual"/>
+        </Method>
+        <Method name="getObservaciones" returnType="String" visibility="public"/>
+        <Method name="setObservaciones" returnType="String" visibility="public">
+          <Argument type="String" name="observaciones"/>
+        </Method>
+        <Method name="getIdIngresopac" returnType="IngresoPacientes" visibility="public"/>
+        <Method name="setIdIngresopac" returnType="IngresoPacientes" visibility="public">
+          <Argument type="IngresoPacientes" name="idIngresopac"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="Object" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ExamenClinicoEstomatologico" package="Modelo" visibility="public" xPosition="3270.0" yPosition="899.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idExamenClinico" type="Integer" visibility="private"/>
+        <Field name="labios" type="String" visibility="private"/>
+        <Field name="mejillas" type="String" visibility="private"/>
+        <Field name="lengua" type="String" visibility="private"/>
+        <Field name="carrillos" type="String" visibility="private"/>
+        <Field name="pisoDeBoca" type="String" visibility="private"/>
+        <Field name="paladarBlando" type="String" visibility="private"/>
+        <Field name="paladarDuro" type="String" visibility="private"/>
+        <Field name="observaciones" type="String" visibility="private"/>
+        <Field name="idIngresopac" type="IngresoPacientes" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idExamenClinico"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idExamenClinico"/>
+          <Argument type="String" name="labios"/>
+          <Argument type="String" name="mejillas"/>
+          <Argument type="String" name="lengua"/>
+          <Argument type="String" name="carrillos"/>
+          <Argument type="String" name="pisoDeBoca"/>
+          <Argument type="String" name="paladarBlando"/>
+          <Argument type="String" name="paladarDuro"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdExamenClinico" returnType="Integer" visibility="public"/>
+        <Method name="setIdExamenClinico" returnType="Integer" visibility="public">
+          <Argument type="Integer" name="idExamenClinico"/>
+        </Method>
+        <Method name="getLabios" returnType="String" visibility="public"/>
+        <Method name="setLabios" returnType="String" visibility="public">
+          <Argument type="String" name="labios"/>
+        </Method>
+        <Method name="getMejillas" returnType="String" visibility="public"/>
+        <Method name="setMejillas" returnType="String" visibility="public">
+          <Argument type="String" name="mejillas"/>
+        </Method>
+        <Method name="getLengua" returnType="String" visibility="public"/>
+        <Method name="setLengua" returnType="String" visibility="public">
+          <Argument type="String" name="lengua"/>
+        </Method>
+        <Method name="getCarrillos" returnType="String" visibility="public"/>
+        <Method name="setCarrillos" returnType="String" visibility="public">
+          <Argument type="String" name="carrillos"/>
+        </Method>
+        <Method name="getPisoDeBoca" returnType="String" visibility="public"/>
+        <Method name="setPisoDeBoca" returnType="String" visibility="public">
+          <Argument type="String" name="pisoDeBoca"/>
+        </Method>
+        <Method name="getPaladarBlando" returnType="String" visibility="public"/>
+        <Method name="setPaladarBlando" returnType="String" visibility="public">
+          <Argument type="String" name="paladarBlando"/>
+        </Method>
+        <Method name="getPaladarDuro" returnType="String" visibility="public"/>
+        <Method name="setPaladarDuro" returnType="String" visibility="public">
+          <Argument type="String" name="paladarDuro"/>
+        </Method>
+        <Method name="getObservaciones" returnType="String" visibility="public"/>
+        <Method name="setObservaciones" returnType="String" visibility="public">
+          <Argument type="String" name="observaciones"/>
+        </Method>
+        <Method name="getIdIngresopac" returnType="IngresoPacientes" visibility="public"/>
+        <Method name="setIdIngresopac" returnType="IngresoPacientes" visibility="public">
+          <Argument type="IngresoPacientes" name="idIngresopac"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="Object" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CuestionarioEstomatologico" package="Modelo" visibility="public" xPosition="2793.0" yPosition="899.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idEstomatologico" type="Integer" visibility="private"/>
+        <Field name="pregunta1" type="boolean" visibility="private"/>
+        <Field name="comentario1" type="String" visibility="private"/>
+        <Field name="pregunta2" type="boolean" visibility="private"/>
+        <Field name="comentario2" type="String" visibility="private"/>
+        <Field name="pregunta3" type="boolean" visibility="private"/>
+        <Field name="comentario3" type="String" visibility="private"/>
+        <Field name="pregunta4" type="boolean" visibility="private"/>
+        <Field name="comentario4" type="String" visibility="private"/>
+        <Field name="pregunta5" type="boolean" visibility="private"/>
+        <Field name="comentario5" type="String" visibility="private"/>
+        <Field name="pregunta6" type="boolean" visibility="private"/>
+        <Field name="comentario6" type="String" visibility="private"/>
+        <Field name="frecCepilladoDientes" type="Integer" visibility="private"/>
+        <Field name="usoDeHiloDental" type="boolean" visibility="private"/>
+        <Field name="frecHiloDental" type="Integer" visibility="private"/>
+        <Field name="usoEnjuagueBucal" type="boolean" visibility="private"/>
+        <Field name="frecEnjuagueBucal" type="Integer" visibility="private"/>
+        <Field name="ultimaVisitaDentista" type="Date" visibility="private"/>
+        <Field name="idIngresopac" type="IngresoPacientes" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idEstomatologico"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idEstomatologico"/>
+          <Argument type="boolean" name="pregunta1"/>
+          <Argument type="boolean" name="pregunta2"/>
+          <Argument type="boolean" name="pregunta3"/>
+          <Argument type="boolean" name="pregunta4"/>
+          <Argument type="boolean" name="pregunta5"/>
+          <Argument type="boolean" name="pregunta6"/>
+          <Argument type="boolean" name="usoDeHiloDental"/>
+          <Argument type="boolean" name="usoEnjuagueBucal"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdEstomatologico" returnType="Integer" visibility="public"/>
+        <Method name="setIdEstomatologico" returnType="Integer" visibility="public">
+          <Argument type="Integer" name="idEstomatologico"/>
+        </Method>
+        <Method name="getPregunta1" returnType="boolean" visibility="public"/>
+        <Method name="setPregunta1" returnType="boolean" visibility="public">
+          <Argument type="boolean" name="pregunta1"/>
+        </Method>
+        <Method name="getComentario1" returnType="String" visibility="public"/>
+        <Method name="setComentario1" returnType="String" visibility="public">
+          <Argument type="String" name="comentario1"/>
+        </Method>
+        <Method name="getPregunta2" returnType="boolean" visibility="public"/>
+        <Method name="setPregunta2" returnType="boolean" visibility="public">
+          <Argument type="boolean" name="pregunta2"/>
+        </Method>
+        <Method name="getComentario2" returnType="String" visibility="public"/>
+        <Method name="setComentario2" returnType="String" visibility="public">
+          <Argument type="String" name="comentario2"/>
+        </Method>
+        <Method name="getPregunta3" returnType="boolean" visibility="public"/>
+        <Method name="setPregunta3" returnType="boolean" visibility="public">
+          <Argument type="boolean" name="pregunta3"/>
+        </Method>
+        <Method name="getComentario3" returnType="String" visibility="public"/>
+        <Method name="setComentario3" returnType="String" visibility="public">
+          <Argument type="String" name="comentario3"/>
+        </Method>
+        <Method name="getPregunta4" returnType="boolean" visibility="public"/>
+        <Method name="setPregunta4" returnType="boolean" visibility="public">
+          <Argument type="boolean" name="pregunta4"/>
+        </Method>
+        <Method name="getComentario4" returnType="String" visibility="public"/>
+        <Method name="setComentario4" returnType="String" visibility="public">
+          <Argument type="String" name="comentario4"/>
+        </Method>
+        <Method name="getPregunta5" returnType="boolean" visibility="public"/>
+        <Method name="setPregunta5" returnType="boolean" visibility="public">
+          <Argument type="boolean" name="pregunta5"/>
+        </Method>
+        <Method name="getComentario5" returnType="String" visibility="public"/>
+        <Method name="setComentario5" returnType="String" visibility="public">
+          <Argument type="String" name="comentario5"/>
+        </Method>
+        <Method name="getPregunta6" returnType="boolean" visibility="public"/>
+        <Method name="setPregunta6" returnType="boolean" visibility="public">
+          <Argument type="boolean" name="pregunta6"/>
+        </Method>
+        <Method name="getComentario6" returnType="String" visibility="public"/>
+        <Method name="setComentario6" returnType="String" visibility="public">
+          <Argument type="String" name="comentario6"/>
+        </Method>
+        <Method name="getFrecCepilladoDientes" returnType="Integer" visibility="public"/>
+        <Method name="setFrecCepilladoDientes" returnType="Integer" visibility="public">
+          <Argument type="Integer" name="frecCepilladoDientes"/>
+        </Method>
+        <Method name="getUsoDeHiloDental" returnType="boolean" visibility="public"/>
+        <Method name="setUsoDeHiloDental" returnType="boolean" visibility="public">
+          <Argument type="boolean" name="usoDeHiloDental"/>
+        </Method>
+        <Method name="getFrecHiloDental" returnType="Integer" visibility="public"/>
+        <Method name="setFrecHiloDental" returnType="Integer" visibility="public">
+          <Argument type="Integer" name="frecHiloDental"/>
+        </Method>
+        <Method name="getUsoEnjuagueBucal" returnType="boolean" visibility="public"/>
+        <Method name="setUsoEnjuagueBucal" returnType="boolean" visibility="public">
+          <Argument type="boolean" name="usoEnjuagueBucal"/>
+        </Method>
+        <Method name="getFrecEnjuagueBucal" returnType="Integer" visibility="public"/>
+        <Method name="setFrecEnjuagueBucal" returnType="Integer" visibility="public">
+          <Argument type="Integer" name="frecEnjuagueBucal"/>
+        </Method>
+        <Method name="getUltimaVisitaDentista" returnType="Date" visibility="public"/>
+        <Method name="setUltimaVisitaDentista" returnType="Date" visibility="public">
+          <Argument type="Date" name="ultimaVisitaDentista"/>
+        </Method>
+        <Method name="getIdIngresopac" returnType="IngresoPacientes" visibility="public"/>
+        <Method name="setIdIngresopac" returnType="IngresoPacientes" visibility="public">
+          <Argument type="IngresoPacientes" name="idIngresopac"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="Object" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AnteceHereFami" package="Modelo" visibility="public" xPosition="2328.0" yPosition="1830.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idAnteceHereFami" type="Integer" visibility="private"/>
+        <Field name="enfermedad" type="String" visibility="private"/>
+        <Field name="quienes" type="String" visibility="private"/>
+        <Field name="idIngresopac" type="IngresoPacientes" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idAnteceHereFami"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdAnteceHereFami" returnType="Integer" visibility="public"/>
+        <Method name="setIdAnteceHereFami" returnType="Integer" visibility="public">
+          <Argument type="Integer" name="idAnteceHereFami"/>
+        </Method>
+        <Method name="getEnfermedad" returnType="String" visibility="public"/>
+        <Method name="setEnfermedad" returnType="String" visibility="public">
+          <Argument type="String" name="enfermedad"/>
+        </Method>
+        <Method name="getQuienes" returnType="String" visibility="public"/>
+        <Method name="setQuienes" returnType="String" visibility="public">
+          <Argument type="String" name="quienes"/>
+        </Method>
+        <Method name="getIdIngresopac" returnType="IngresoPacientes" visibility="public"/>
+        <Method name="setIdIngresopac" returnType="IngresoPacientes" visibility="public">
+          <Argument type="IngresoPacientes" name="idIngresopac"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="Object" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Usuarios" package="" visibility="public" xPosition="185.0" yPosition="550.0">
+      <Fields>
+        <Field name="acceso" type="String" visibility="private"/>
+        <Field name="rfcusuario" type="String" visibility="private"/>
+        <Field name="apellidousuario" type="String" visibility="private"/>
+        <Field name="estado" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+        <Field name="nombreusuario" type="String" visibility="private"/>
+        <Field name="telefonousuario" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Usuarios" returnType="void" visibility="public"/>
+        <Method name="getacceso" returnType="String" visibility="public"/>
+        <Method name="getrfcusuario" returnType="String" visibility="public"/>
+        <Method name="getdireccion" returnType="String" visibility="public"/>
+        <Method name="getestado" returnType="String" visibility="public"/>
+        <Method name="gettelefonousuario" returnType="Integer" visibility="public"/>
+        <Method name="getapellidousuario" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AnteceNoPato" package="" visibility="public" xPosition="1563.0" yPosition="871.0">
+      <Fields>
+        <Field name="Fuma" type="String" visibility="private"/>
+        <Field name="FumaCuando" type="String" visibility="private"/>
+        <Field name="Cuantos" type="String" visibility="private"/>
+        <Field name="BebiAlcohol" type="String" visibility="private"/>
+        <Field name="PerdidaPeso" type="String" visibility="private"/>
+        <Field name="Ejercicio" type="String" visibility="private"/>
+        <Field name="EjercicioCual" type="String" visibility="private"/>
+        <Field name="Estres" type="String" visibility="private"/>
+        <Field name="Ronca" type="String" visibility="private"/>
+        <Field name="Lactando" type="String" visibility="private"/>
+        <Field name="AlergiaMedic" type="String" visibility="private"/>
+        <Field name="MalSueno" type="String" visibility="private"/>
+        <Field name="MSMedica" type="String" visibility="private"/>
+        <Field name="Hospitalizado" type="String" visibility="private"/>
+        <Field name="HospiCuando" type="String" visibility="private"/>
+        <Field name="HospiCuanto" type="String" visibility="private"/>
+        <Field name="Anticonceptivo" type="String" visibility="private"/>
+        <Field name="TomarMedica" type="String" visibility="private"/>
+        <Field name="TMCuales" type="String" visibility="private"/>
+        <Field name="TMParaque" type="String" visibility="private"/>
+        <Field name="TMElmismo" type="String" visibility="private"/>
+        <Field name="ElmismoCuales" type="String" visibility="private"/>
+        <Field name="AntiCuales" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="AnteceNoPato" returnType="void" visibility="public"/>
+        <Method name="getFuma" returnType="String" visibility="public"/>
+        <Method name="getFumaCuando" returnType="String" visibility="public"/>
+        <Method name="getCuantos" returnType="String" visibility="public"/>
+        <Method name="getBebiAlcohol" returnType="String" visibility="public"/>
+        <Method name="getPerdidaPeso" returnType="String" visibility="public"/>
+        <Method name="getEjercicio" returnType="String" visibility="public"/>
+        <Method name="getEjercicioCual" returnType="String" visibility="public"/>
+        <Method name="getEstres" returnType="String" visibility="public"/>
+        <Method name="getRonca" returnType="String" visibility="public"/>
+        <Method name="getLactando" returnType="String" visibility="public"/>
+        <Method name="getAlergiaMedic" returnType="String" visibility="public"/>
+        <Method name="getMalSueno" returnType="String" visibility="public"/>
+        <Method name="getMSMedica" returnType="String" visibility="public"/>
+        <Method name="getHospitalizado" returnType="String" visibility="public"/>
+        <Method name="getHospiCuando" returnType="String" visibility="public"/>
+        <Method name="getHospiCuanto" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AntecePato" package="" visibility="public" xPosition="2062.0" yPosition="1488.0">
+      <Fields>
+        <Field name="Hepatitis" type="String" visibility="private"/>
+        <Field name="HepatiTipo" type="String" visibility="private"/>
+        <Field name="Tuberculosis" type="String" visibility="private"/>
+        <Field name="Rinones" type="String" visibility="private"/>
+        <Field name="Asma" type="String" visibility="private"/>
+        <Field name="Higado" type="String" visibility="private"/>
+        <Field name="Cancer" type="String" visibility="private"/>
+        <Field name="Diabetes" type="String" visibility="private"/>
+        <Field name="Embolias" type="String" visibility="private"/>
+        <Field name="Marea" type="String" visibility="private"/>
+        <Field name="Hemorragias" type="String" visibility="private"/>
+        <Field name="TransfucionSangre" type="String" visibility="private"/>
+        <Field name="Epilepcia" type="String" visibility="private"/>
+        <Field name="PierdeMemoria" type="String" visibility="private"/>
+        <Field name="DolorCabeza" type="String" visibility="private"/>
+        <Field name="ProblemOjos" type="String" visibility="private"/>
+        <Field name="ProblemHuesos" type="String" visibility="private"/>
+        <Field name="ProblemOidos" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getHepatitis" returnType="String" visibility="public"/>
+        <Method name="getHepatiTipo" returnType="String" visibility="public"/>
+        <Method name="getTuberculosis" returnType="String" visibility="public"/>
+        <Method name="getRinones" returnType="String" visibility="public"/>
+        <Method name="getAsma" returnType="String" visibility="public"/>
+        <Method name="getHigado" returnType="String" visibility="public"/>
+        <Method name="getCancer" returnType="String" visibility="public"/>
+        <Method name="getDiabetes" returnType="String" visibility="public"/>
+        <Method name="getEmbolias" returnType="String" visibility="public"/>
+        <Method name="getMarea" returnType="String" visibility="public"/>
+        <Method name="getHemorragias" returnType="String" visibility="public"/>
+        <Method name="getTransfucionSangre" returnType="String" visibility="public"/>
+        <Method name="getEoilepcia" returnType="String" visibility="public"/>
+        <Method name="getPierdeMemoria" returnType="String" visibility="public"/>
+        <Method name="getDolorCabeza" returnType="String" visibility="public"/>
+        <Method name="getProblemOjos" returnType="String" visibility="public"/>
+        <Method name="getProblemHuesos" returnType="String" visibility="public"/>
+        <Method name="getProblemOidos" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.CuestionarioEstomatologico" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Modelo.Pacientes" target="Modelo.IngresoPacientes" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.Exploracionfisica" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.Servicioestomatologico" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="AnteceNoPato" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.ExamenClinicoEstomatologico" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Usuarios" target="Modelo.IngresoUsuarios" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.AnteceHereFami" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="AntecePato" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Usuarios" target="Modelo.Pacientes" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
