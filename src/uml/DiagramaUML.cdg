@@ -324,7 +324,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="ExamenClinicoEstomatologico" package="Modelo" visibility="public" xPosition="3270.0" yPosition="899.0">
+    <Class name="ExamenClinicoEstomatologico" package="Modelo" visibility="public" xPosition="4360.0" yPosition="2123.0">
       <Fields>
         <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
         <Field name="idExamenClinico" type="Integer" visibility="private"/>
@@ -402,7 +402,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="CuestionarioEstomatologico" package="Modelo" visibility="public" xPosition="2793.0" yPosition="899.0">
+    <Class name="CuestionarioEstomatologico" package="Modelo" visibility="public" xPosition="2300.0" yPosition="2520.0">
       <Fields>
         <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
         <Field name="idEstomatologico" type="Integer" visibility="private"/>
@@ -637,7 +637,7 @@
         <Method name="getHospiCuanto" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="AntecePato" package="" visibility="public" xPosition="2062.0" yPosition="1488.0">
+    <Class name="AntecePato" package="" visibility="public" xPosition="1961.0" yPosition="1692.0">
       <Fields>
         <Field name="Hepatitis" type="String" visibility="private"/>
         <Field name="HepatiTipo" type="String" visibility="private"/>
@@ -682,15 +682,15 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.CuestionarioEstomatologico" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <HasRelation name="tiene" source="Modelo.Pacientes" target="Modelo.IngresoPacientes" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.Exploracionfisica" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.Servicioestomatologico" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
     <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="AnteceNoPato" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.ExamenClinicoEstomatologico" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <HasRelation name="tiene" source="Usuarios" target="Modelo.IngresoUsuarios" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
-    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.AnteceHereFami" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
     <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="AntecePato" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.Servicioestomatologico" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
     <HasRelation name="tiene" source="Usuarios" target="Modelo.Pacientes" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Modelo.Pacientes" target="Modelo.IngresoPacientes" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.ExamenClinicoEstomatologico" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.Exploracionfisica" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.AnteceHereFami" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Usuarios" target="Modelo.IngresoUsuarios" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="tiene" source="Modelo.IngresoPacientes" target="Modelo.CuestionarioEstomatologico" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
