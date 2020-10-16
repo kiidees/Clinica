@@ -3,24 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BD;
+package mvc;
 
-import java.sql.ResultSet;
+import controlador.ControladorLogin;
+import modelo.ModeloLogin;
+import vista.VistaLogin;
 
 /**
  *
  * @author jklm2
  */
-public class TestConnection {
+public class MVC {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Conexion conect = new Conexion();
-        conect.conectar();
-        ResultSet resultados = conect.consultar("select * from usuarios where rfcusuario = 'CANL941222HSP' and contraseña = '123456asdf'");
+        VistaLogin vista = new VistaLogin();
+        ModeloLogin modelo = new ModeloLogin();
+        ControladorLogin control = new ControladorLogin(vista,modelo);
+        control.iniciar();
+        vista.setVisible(true);
+        
     }
     
 }

@@ -1,0 +1,32 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package controlador;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import modelo.ModeloLogin;
+import vista.VistaLogin;
+
+public class ControladorLogin implements ActionListener{
+    private VistaLogin vista;
+    private ModeloLogin modelo;
+
+    public ControladorLogin(VistaLogin vista, ModeloLogin modelo) {
+        this.vista = vista;
+        this.modelo = modelo;
+        this.vista.btnInicia.addActionListener(this);
+    }
+    
+    public void iniciar(){
+        vista.setTitle("ClinicaSoft v1.0.0");
+        vista.setLocationRelativeTo(null);
+    }
+    
+    public void actionPerformed(ActionEvent e){
+        modelo.verificaUsuario(vista.userName.getText(), vista.userPass.getText());
+    }
+    
+}
