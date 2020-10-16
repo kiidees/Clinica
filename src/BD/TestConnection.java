@@ -6,6 +6,7 @@
 package BD;
 
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,6 +22,21 @@ public class TestConnection {
         Conexion conect = new Conexion();
         conect.conectar();
         ResultSet resultados = conect.consultar("select * from usuarios where rfcusuario = 'CANL941222HSP' and contraseña = '123456asdf'");
+        
+        if (resultados != null) {
+            try {
+                JOptionPane.showMessageDialog(null, "Iniciaste sesion correctamente");
+                while (resultados.next()) {
+                    //
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } //estado = true;}
+        else {
+            JOptionPane.showMessageDialog(null, "Verifica tu Usuario y Contraseña");
+
+            //estado = false;
+        }
     }
-    
 }

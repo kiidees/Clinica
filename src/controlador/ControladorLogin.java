@@ -7,6 +7,9 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.ModeloLogin;
 import vista.VistaLogin;
 
@@ -24,9 +27,16 @@ public class ControladorLogin implements ActionListener{
         vista.setTitle("ClinicaSoft v1.0.0");
         vista.setLocationRelativeTo(null);
     }
-    
+   
     public void actionPerformed(ActionEvent e){
-        modelo.verificaUsuario(vista.userName.getText(), vista.userPass.getText());
+        //modelo.verificaUsuario(vista.userName.getText(), vista.userPass.getText());
+        modelo.setUsuario(vista.userName.getText());
+        modelo.setPassword(vista.userPass.getText());
+        try {
+            modelo.verificaUsuario();
+        } catch (SQLException ex) {
+            Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

@@ -45,10 +45,10 @@ public class VistaLogin extends javax.swing.JFrame {
             }
         });
 
-        userName.setText("USER");
+        userName.setText("CANL941222HSP");
         userName.setToolTipText("Usuario");
 
-        userPass.setText("PASSWORD");
+        userPass.setText("123456asdf");
         userPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userPassActionPerformed(evt);
