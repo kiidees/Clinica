@@ -5,6 +5,7 @@
  */
 package BD;
 
+import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import org.postgresql.util.PSQLException;
 
 /**
  *
@@ -46,7 +48,7 @@ public class Conexion {
         this.conexion = conexion;
     }
 
-    public Conexion conectar() {
+    public Conexion conectar() throws ConnectException, PSQLException, ClassNotFoundException, SQLException{
         try {
             Class.forName("org.postgresql.Driver");
             //String contrasenia = contraseña.toString();
@@ -56,8 +58,11 @@ public class Conexion {
             } else {
                 System.out.println("Conexion fallida!");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch ( Exception e) {
+            JOptionPane.showMessageDialog(null, "Parece que no tienes conexion con el servidor \n"
+                    + " Comunicate con Sistemas o asegurate de iniciar PostgresQL \n "+e.getMessage().substring(0,38));
+            System.exit(0);
+            //System.out.println("error: "+e.getMessage());
         }
 
         return this;

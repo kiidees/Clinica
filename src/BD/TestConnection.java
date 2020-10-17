@@ -5,7 +5,9 @@
  */
 package BD;
 
+import java.net.ConnectException;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,7 +19,7 @@ public class TestConnection {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ConnectException, ClassNotFoundException, SQLException {
         // TODO code application logic here
         Conexion conect = new Conexion();
         conect.conectar();

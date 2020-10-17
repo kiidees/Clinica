@@ -11,7 +11,8 @@ public class ModeloLogin{
     private String usuario ;
     private String password ;
     
-    public Conexion conect = new Conexion().conectar();
+    //public Conexion conect = new Conexion().conectar();
+    public Conexion conect = new Conexion();
     Base64 base = new Base64();
     
 

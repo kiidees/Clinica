@@ -6,6 +6,8 @@
 package mvc;
 
 import controlador.ControladorLogin;
+import java.net.ConnectException;
+import java.sql.SQLException;
 import modelo.ModeloLogin;
 import vista.VistaLogin;
 
@@ -18,7 +20,7 @@ public class MVC {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ConnectException, ClassNotFoundException, SQLException {
         // TODO code application logic here
         VistaLogin vista = new VistaLogin();
         ModeloLogin modelo = new ModeloLogin();

@@ -7,6 +7,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.ConnectException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,10 +18,11 @@ public class ControladorLogin implements ActionListener{
     private VistaLogin vista;
     private ModeloLogin modelo;
 
-    public ControladorLogin(VistaLogin vista, ModeloLogin modelo) {
+    public ControladorLogin(VistaLogin vista, ModeloLogin modelo) throws ConnectException, ClassNotFoundException, SQLException {
         this.vista = vista;
         this.modelo = modelo;
         this.vista.btnInicia.addActionListener(this);
+        this.modelo.conect.conectar();
     }
     
     public void iniciar(){
@@ -28,6 +30,7 @@ public class ControladorLogin implements ActionListener{
         vista.setLocationRelativeTo(null);
     }
    
+    @Override
     public void actionPerformed(ActionEvent e){
         //modelo.verificaUsuario(vista.userName.getText(), vista.userPass.getText());
         modelo.setUsuario(vista.userName.getText());
