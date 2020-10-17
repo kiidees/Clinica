@@ -36,6 +36,8 @@ public class ControladorLogin implements ActionListener{
             modelo.verificaUsuario();
         } catch (SQLException ex) {
             Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
