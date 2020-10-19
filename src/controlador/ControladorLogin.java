@@ -33,7 +33,7 @@ public class ControladorLogin implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e){
         //modelo.verificaUsuario(vista.userName.getText(), vista.userPass.getText());
-        modelo.setUsuario(vista.userName.getText());
+        modelo.setUsuario(vista.userName.getText().toUpperCase());
         modelo.setPassword(vista.userPass.getText());
         try {
             modelo.verificaUsuario();
