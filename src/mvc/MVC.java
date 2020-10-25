@@ -9,6 +9,7 @@ import controlador.ControladorLogin;
 import java.net.ConnectException;
 import java.sql.SQLException;
 import modelo.ModeloLogin;
+import vista.VistaInicio;
 import vista.VistaLogin;
 
 /**
@@ -22,6 +23,9 @@ public class MVC {
      */
     public static void main(String[] args) throws ConnectException, ClassNotFoundException, SQLException {
         // TODO code application logic here
+        VistaInicio inicio = new VistaInicio();
+        inicio.setVisible(true);
+        
         VistaLogin vista = new VistaLogin();
         ModeloLogin modelo = new ModeloLogin();
         ControladorLogin control = new ControladorLogin(vista,modelo);

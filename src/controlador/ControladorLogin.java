@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import modelo.ModeloLogin;
 import vista.VistaLogin;
 
+
 public class ControladorLogin implements ActionListener{
     private VistaLogin vista;
     private ModeloLogin modelo;
