@@ -27,7 +27,7 @@ public class ControladorLogin implements ActionListener{
     }
     
     public void iniciar(){
-        vista.setTitle("ClinicaSoft v1.0.0");
+        vista.setTitle("Hesi-Re v1.0.0");
         vista.setLocationRelativeTo(null);
     }
    

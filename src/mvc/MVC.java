@@ -5,12 +5,11 @@
  */
 package mvc;
 
-import controlador.ControladorLogin;
+import controlador.ControladorInicio;
 import java.net.ConnectException;
 import java.sql.SQLException;
-import modelo.ModeloLogin;
+import modelo.ModeloInicio;
 import vista.VistaInicio;
-import vista.VistaLogin;
 
 /**
  *
@@ -23,14 +22,11 @@ public class MVC {
      */
     public static void main(String[] args) throws ConnectException, ClassNotFoundException, SQLException {
         // TODO code application logic here
-        VistaInicio inicio = new VistaInicio();
-        inicio.setVisible(true);
-        
-        VistaLogin vista = new VistaLogin();
-        ModeloLogin modelo = new ModeloLogin();
-        ControladorLogin control = new ControladorLogin(vista,modelo);
-        control.iniciar();
-        vista.setVisible(true);
+        VistaInicio Vinicio = new VistaInicio();
+        ModeloInicio Minicio = new ModeloInicio();
+        ControladorInicio Cinicio = new ControladorInicio(Vinicio, Minicio);
+        Cinicio.inicia();
+        Vinicio.setVisible(true);
         
     }
     

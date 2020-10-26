@@ -1,23 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vista;
 
-/**
- *
- * @author juanf
- */
+import javax.swing.ImageIcon;
+
+
 public class VistaLogin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VistaLogin
-     */
     public VistaLogin() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        setIconImage(new ImageIcon(getClass().getResource("/icon/tooth.png")).getImage());
     }
 
     /**
@@ -34,10 +26,13 @@ public class VistaLogin extends javax.swing.JFrame {
         userName = new javax.swing.JTextField();
         userPass = new javax.swing.JPasswordField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        btnInicia.setBackground(new java.awt.Color(18, 101, 105));
+        btnInicia.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        btnInicia.setForeground(new java.awt.Color(255, 255, 255));
         btnInicia.setText("Iniciar Sesion");
         btnInicia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
