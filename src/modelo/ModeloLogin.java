@@ -6,15 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class ModeloLogin{
-    
-    private String usuario ;
-    private String password ;
-    
+public class ModeloLogin {
+
+    private String usuario;
+    private String password;
+
     //public Conexion conect = new Conexion().conectar();
     public Conexion conect = new Conexion();
     Base64 base = new Base64();
-    
 
     public Conexion getConect() {
         return conect;
@@ -23,7 +22,7 @@ public class ModeloLogin{
     public void setConect(Conexion conect) {
         this.conect = conect;
     }
-    
+
     public String getUsuario() {
         return usuario;
     }
@@ -39,7 +38,7 @@ public class ModeloLogin{
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
     public void verificaUsuario() throws SQLException, Exception {
         boolean estado = false;
         boolean estadoUsuario = false;
@@ -48,8 +47,8 @@ public class ModeloLogin{
         if (resultados.next()) {
             try {//comienza desencriptacion desde BD
                 String passUnsure = base.decode(resultados.getString(4));
-                System.out.println("contraseña desencriptada: "+passUnsure);
-                estadoUsuario=resultados.getBoolean(6);
+                System.out.println("contraseña desencriptada: " + passUnsure);
+                estadoUsuario = resultados.getBoolean(6);
                 //termina desencriptacion
                 if (passUnsure.equals(this.password)) {
                     if (estadoUsuario == true) {
@@ -67,7 +66,7 @@ public class ModeloLogin{
                                 break;
                             default:
                                 throw new AssertionError();
-                        }
+                        }//Fin switch
                         JOptionPane.showMessageDialog(null, "Iniciaste sesion correctamente");
                     } else {
                         JOptionPane.showMessageDialog(null, "Parece que no eres un usuario activo \n Comunicate con Sistemas");
@@ -85,7 +84,6 @@ public class ModeloLogin{
             estado = false;
         }
 
-        //return estado;
     }
 
 }

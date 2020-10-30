@@ -40,7 +40,8 @@ public class VistaInicio extends javax.swing.JFrame {
         btnLogin.setBackground(new java.awt.Color(18, 101, 105));
         btnLogin.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
-        btnLogin.setText("LOGIN");
+        btnLogin.setText("INICIA SESIÓN");
+        btnLogin.setBorder(null);
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
