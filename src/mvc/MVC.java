@@ -20,5 +20,6 @@ public class MVC {
         Vinicio.setVisible(true);
 
     }
+    
 
 }//Fin MVC
