@@ -2,12 +2,22 @@ package modelo;
 
 import BD.Conexion;
 import encriptacion.Base64;
+import java.net.ConnectException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import vista.VistaRegistro;
 
 public class ModeloLogin {
 
+    public void Registro() throws ConnectException, ClassNotFoundException, SQLException{
+        VistaRegistro vista = new VistaRegistro();
+        ModeloRegistro modelo = new ModeloRegistro();
+        controlador.ControladorRegistro control = new controlador.ControladorRegistro(vista, modelo);
+        control.iniciar();
+        vista.setVisible(true);
+}
+    
     private String usuario;
     private String password;
 

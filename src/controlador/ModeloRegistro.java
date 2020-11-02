@@ -10,14 +10,6 @@ import controlador.ControladorRegistro;
 import vista.VistaRegistro;
 
 public class ModeloRegistro {
-
-    public void Registro() throws ConnectException, ClassNotFoundException, SQLException{
-        VistaRegistro vista = new VistaRegistro();
-        ModeloRegistro modelo = new ModeloRegistro();
-        ControladorRegistro control = new ControladorRegistro(vista, modelo);
-        control.iniciar();
-        vista.setVisible(true);
-}
     
     private String usuario;
     private String password;

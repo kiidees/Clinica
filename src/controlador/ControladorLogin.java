@@ -56,7 +56,15 @@ public class ControladorLogin implements ActionListener{
         }//Fin if
         //Accion Registrarse
         if(e.getSource() == vista.btnRegistrar){
-            registroUsuario.setVisible(true);
+            try {
+                modelo.Registro();
+            } catch (ConnectException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
     }//Fin actionPerformed
