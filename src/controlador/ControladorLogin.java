@@ -10,14 +10,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import modelo.ModeloLogin;
 import vista.VistaLogin;
-import modelo.ModeloRegistro;
-import vista.VistaRegistro;
 
 
 public class ControladorLogin implements ActionListener{
     private VistaLogin vista;
     private ModeloLogin modelo;
-    private VistaRegistro registroUsuario;
 
     public ControladorLogin(VistaLogin vista, ModeloLogin modelo) throws ConnectException, ClassNotFoundException, SQLException {
         this.vista = vista;

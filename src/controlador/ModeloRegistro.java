@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import controlador.ControladorRegistro;
+import org.postgresql.util.PSQLException;
 import vista.VistaRegistro;
 
 public class ModeloRegistro {
@@ -112,32 +113,29 @@ public class ModeloRegistro {
         this.passconfirmation = passconfirmation;
     }
     
-    
-    public void registroUsuario() throws SQLException{
-        ResultSet ingreso = conect.insertar("insert into usuarios (varchar rfcusuario,"
-                + "int acceso,varchar apellidousuario, varchar contraseña, varchar direccionusuario,"
-                + "boolean estado, varchar nombreusuario, int telefonousuario"
-                + ") VALUES ('"+ this.RFC + "'," + this.acceso + ",'" + this.apellidos + "','" + this.password 
-                + "','" + this.direccion + "'," + this.estado + "','" + this.usuario + "'," + this.telefono + ")");
-        
-        ResultSet resultados = conect.consultar("select * from usuarios where rfcusuario = '" + this.usuario + "'");
-        
-        if (ingreso.next()){
-            try {
-                if((this.usuario == null)||(this.RFC == null)||(this.apellidos == null)||(this.password == null)||(this.passconfirmation == null)||(this.direccion == null)){
-                    if(this.password != this.passconfirmation){
-                        JOptionPane.showMessageDialog(null, "Datos Incorrectos verifique nuevamente");
+    public void registroUsuario() throws SQLException, ConnectException, PSQLException, ClassNotFoundException {
+        Conexion modConf = new ModeloLogin().conect.conectar();
+        if (this.password.equals(this.passconfirmation)) {
+            if (this.acceso > 0 && this.acceso < 4) {
+                try {
+                    if (modConf.ejecutar("insert into usuarios ( rfcusuario,"
+                            + " acceso,apellidousuario, \"contraseña\",direccionusuario,"
+                            + " estado,  nombreusuario,  telefonousuario"
+                            + ") VALUES ('" + this.RFC + "'," + this.acceso + ",'" + this.apellidos + "','" + base.encode(this.password)
+                            + "','" + this.direccion + "'," + this.estado + ",'" + this.usuario + "'," + this.telefono + ")")) {
+
+                        System.out.println("Ejecución correcta!");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "¡Datos ya registrados!");
                     }
-                    JOptionPane.showMessageDialog(null, "Datos Incorrectos verifique nuevamente");
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "¡Verifica tus datos!");
                 }
-                JOptionPane.showMessageDialog(null, "Registro Correcto");
-            } catch (Exception e) {
-                e.printStackTrace();
-                
             }
-        
+            else JOptionPane.showMessageDialog(null, "¡Verifica el nivel de acceso!");
         }
-    
+        else JOptionPane.showMessageDialog(null, "¡Contraseña no coincide!");
     }
-    
+
 }

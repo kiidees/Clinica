@@ -1,5 +1,8 @@
 package vista;
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
 public class VistaRegistro extends javax.swing.JFrame {
 
     public VistaRegistro() {
@@ -36,9 +39,51 @@ public class VistaRegistro extends javax.swing.JFrame {
 
         btnRegistrar.setText("Registrar");
 
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
+
+        txtApellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidosKeyTyped(evt);
+            }
+        });
+
         txtRFC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRFCActionPerformed(evt);
+            }
+        });
+        txtRFC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRFCKeyTyped(evt);
+            }
+        });
+
+        txtTelefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefonoActionPerformed(evt);
+            }
+        });
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
+            }
+        });
+
+        txtAcceso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAccesoActionPerformed(evt);
+            }
+        });
+        txtAcceso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAccesoKeyTyped(evt);
             }
         });
 
@@ -208,6 +253,70 @@ public class VistaRegistro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtConfContraseñaActionPerformed
 
+    private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
+      
+    }//GEN-LAST:event_txtTelefonoActionPerformed
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+        if (txtTelefono.getText().length() > 9) {
+            evt.consume();    
+        }
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtTelefonoKeyTyped
+
+    private void txtTelefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyPressed
+        
+    }//GEN-LAST:event_txtTelefonoKeyPressed
+
+    private void txtAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAccesoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAccesoActionPerformed
+
+    private void txtAccesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAccesoKeyTyped
+        if (txtAcceso.getText().length() == 1) {
+            evt.consume();    
+        }
+        if (evt.getKeyChar() < (byte)49) {
+            evt.consume();
+        }
+        if (evt.getKeyChar() > (byte)51) {
+            evt.consume();
+        }
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtAccesoKeyTyped
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        if (txtNombre.getText().length() >= 30) {
+            evt.consume();    
+        }
+        char c = evt.getKeyChar();
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtApellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosKeyTyped
+        if (txtApellidos.getText().length() >= 30) {
+            evt.consume();    
+        }
+        char c = evt.getKeyChar();
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtApellidosKeyTyped
+
+    private void txtRFCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRFCKeyTyped
+        if (txtRFC.getText().length() >= 15) {
+            evt.consume();    
+        }
+    }//GEN-LAST:event_txtRFCKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -255,14 +364,14 @@ public class VistaRegistro extends javax.swing.JFrame {
     private javax.swing.JLabel etqRFC;
     private javax.swing.JLabel etqTelefono;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtAcceso;
-    private javax.swing.JTextField txtApellidos;
+    public javax.swing.JTextField txtAcceso;
+    public javax.swing.JTextField txtApellidos;
     public javax.swing.JPasswordField txtConfContraseña;
     public javax.swing.JPasswordField txtContraseña;
-    private javax.swing.JTextField txtDireccion;
-    private javax.swing.JTextField txtEstado;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtRFC;
-    private javax.swing.JTextField txtTelefono;
+    public javax.swing.JTextField txtDireccion;
+    public javax.swing.JTextField txtEstado;
+    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtRFC;
+    public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

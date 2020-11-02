@@ -7,8 +7,8 @@
             <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/controlador/ControladorLogin.java</file>
             <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/modelo/ModeloLogin.java</file>
             <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/vista/VistaRegistro.java</file>
-            <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/controlador/ControladorRegistro.java</file>
-            <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/modelo/ModeloRegistro.java</file>
+            <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/controlador/ModeloRegistro.java</file>
+            <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/modelo/ControladorRegistro.java</file>
             <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/BD/Conexion.java</file>
             <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/vista/VistaLogin.java</file>
         </group>

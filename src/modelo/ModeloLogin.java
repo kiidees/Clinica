@@ -23,7 +23,7 @@ public class ModeloLogin {
 
     //public Conexion conect = new Conexion().conectar();
     public Conexion conect = new Conexion();
-    Base64 base = new Base64();
+    public Base64 base = new Base64();
 
     public Conexion getConect() {
         return conect;

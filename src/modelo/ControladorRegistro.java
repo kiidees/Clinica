@@ -7,6 +7,7 @@ import java.net.ConnectException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.postgresql.util.PSQLException;
 import vista.VistaRegistro;
 
 public class ControladorRegistro implements ActionListener {
@@ -30,10 +31,25 @@ public class ControladorRegistro implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        try {
-            modelo.Registro();
-        } catch (ConnectException | ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ControladorInicio.class.getName()).log(Level.SEVERE, null, ex);
+        if(e.getSource() == vista.btnRegistrar){
+            modelo.setUsuario(vista.txtNombre.getText());
+            modelo.setApellidos(vista.txtApellidos.getText());
+            modelo.setRFC(vista.txtRFC.getText().toUpperCase());
+            modelo.setAcceso(Integer.parseInt(vista.txtAcceso.getText()));
+            modelo.setEstado(Boolean.parseBoolean(vista.txtEstado.getText()));
+            modelo.setPassword(vista.txtContraseña.getText());
+            modelo.setPassconfirmation(vista.txtConfContraseña.getText());
+            modelo.setTelefono(Integer.parseInt(vista.txtTelefono.getText().substring(10)));
+            modelo.setDireccion(vista.txtDireccion.getText());
+            try {
+                modelo.registroUsuario();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorRegistro.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ConnectException ex) {
+                Logger.getLogger(ControladorRegistro.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ControladorRegistro.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
     }
