@@ -1,30 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package BD;
 
 import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import org.postgresql.util.PSQLException;
 
-/**
- *
- * @author kyde(edyk)
- */
 public class Conexion {
     
     private Connection conexion;
     private String usuario;
     private String contraseña;
-    private String url = "jdbc:postgresql://localhost:5432/clinica2?user=postgres&password=contrasenia";
+    private String url = "jdbc:postgresql://localhost:5432/Clinica?user=postgres&password=root";
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
@@ -90,6 +80,17 @@ public class Conexion {
             return false;
         }
         return true;
+    }
+    
+    public ResultSet insertar (String sql){
+            ResultSet resultado;
+        try {
+            Statement sentencia = getConexion().createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+            resultado = sentencia.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
