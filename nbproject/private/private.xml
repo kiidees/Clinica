@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/mvc/MVC.java</file>
+            <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/controlador/ControladorLogin.java</file>
+            <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/modelo/ModeloLogin.java</file>
+            <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/vista/VistaRegistro.java</file>
+            <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/controlador/ModeloRegistro.java</file>
+            <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/modelo/ControladorRegistro.java</file>
+            <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/BD/Conexion.java</file>
+            <file>file:/C:/Users/juanm/Documents/GithubProyects/Clinica/src/vista/VistaLogin.java</file>
+        </group>
+>>>>>>> ramaManuel
     </open-files>
 </project-private>
