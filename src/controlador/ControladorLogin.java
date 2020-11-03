@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import modelo.ModeloLogin;
 import vista.VistaLogin;
 
@@ -30,6 +29,7 @@ public class ControladorLogin implements ActionListener{
         vista.setLocationRelativeTo(null);
         vista.setResizable(false);
         vista.setIconImage(new ImageIcon(getClass().getResource("/icon/tooth.png")).getImage());
+        
     }
    
     @Override

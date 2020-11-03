@@ -5,6 +5,7 @@ import encriptacion.Base64;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import vista.VistaUsuarios;
 
 public class ModeloLogin {
 
@@ -14,6 +15,9 @@ public class ModeloLogin {
     //public Conexion conect = new Conexion().conectar();
     public Conexion conect = new Conexion();
     Base64 base = new Base64();
+    
+    ModeloUsuarios modelo = new ModeloUsuarios();
+    VistaUsuarios vista = new VistaUsuarios();
 
     public Conexion getConect() {
         return conect;
@@ -57,17 +61,25 @@ public class ModeloLogin {
                         switch (tipoUsuario) {
                             case 1:
                                 /*aqui se implementa el nivel de acceso*/ System.out.println("Administrador");
+                                JOptionPane.showMessageDialog(null, "Iniciaste sesion correctamente");
+                                this.modelo.inicioAdministrador();
                                 break;
                             case 2:
                                 /*aqui se implementa el nivel de acceso*/ System.out.println("Doctor");
+                                JOptionPane.showMessageDialog(null, "Iniciaste sesion correctamente");
+                                this.modelo.iniciaDoctor();
                                 break;
                             case 3:
                                 /*aqui se implementa el nivel de acceso*/ System.out.println("Ayudante de doctor");
+                                JOptionPane.showMessageDialog(null, "Iniciaste sesion correctamente");
+                                this.modelo.inicioAyudante();
                                 break;
                             default:
                                 throw new AssertionError();
                         }//Fin switch
-                        JOptionPane.showMessageDialog(null, "Iniciaste sesion correctamente");
+                        //JOptionPane.showMessageDialog(null, "Iniciaste sesion correctamente");
+                        //this.modeloU.iniciaDoctor();
+                        
                     } else {
                         JOptionPane.showMessageDialog(null, "Parece que no eres un usuario activo \n Comunicate con Sistemas");
                     }
