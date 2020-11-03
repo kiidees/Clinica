@@ -12,9 +12,13 @@
 
 # Package Files #
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 *.jar
 >>>>>>> ramafrancisco
+=======
+*.jar
+>>>>>>> ramaManuel
 *.war
 *.nar
 *.ear
@@ -23,6 +27,7 @@
 *.rar
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # BD connection #
 src/BD/Conexion.java
@@ -30,6 +35,8 @@ src/BD/Conexion.java
 
 =======
 >>>>>>> ramafrancisco
+=======
+>>>>>>> ramaManuel
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /dist/

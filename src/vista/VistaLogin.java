@@ -1,17 +1,20 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+=======
+>>>>>>> ramaManuel
 package vista;
 
-/**
- *
- * @author jklm2
- */
+import javax.swing.ImageIcon;
+
+
 public class VistaLogin extends javax.swing.JFrame {
 
+<<<<<<< HEAD
     /**
      * Creates new form Login
      */
@@ -24,6 +27,8 @@ import javax.swing.ImageIcon;
 public class VistaLogin extends javax.swing.JFrame {
 
 >>>>>>> ramafrancisco
+=======
+>>>>>>> ramaManuel
     public VistaLogin() {
         initComponents();
     }
@@ -38,17 +43,23 @@ public class VistaLogin extends javax.swing.JFrame {
     private void initComponents() {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        jPanel1 = new javax.swing.JPanel();
+>>>>>>> ramaManuel
         btnInicia = new javax.swing.JButton();
         userName = new javax.swing.JTextField();
         userPass = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btnRegistrar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        btnCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(400, 300));
-        setMinimumSize(new java.awt.Dimension(400, 300));
-        setPreferredSize(new java.awt.Dimension(400, 280));
-        setResizable(false);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
+<<<<<<< HEAD
         btnInicia.setText("LOGIN");
 =======
         jPanel1 = new javax.swing.JPanel();
@@ -64,6 +75,8 @@ public class VistaLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
 
+=======
+>>>>>>> ramaManuel
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(18, 101, 105)));
 
@@ -72,13 +85,17 @@ public class VistaLogin extends javax.swing.JFrame {
         btnInicia.setForeground(new java.awt.Color(255, 255, 255));
         btnInicia.setText("ENTRAR");
         btnInicia.setBorder(null);
+<<<<<<< HEAD
 >>>>>>> ramafrancisco
+=======
+>>>>>>> ramaManuel
         btnInicia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciaActionPerformed(evt);
             }
         });
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         userName.setText("CANL941222HSP");
         userName.setToolTipText("Usuario");
@@ -96,6 +113,18 @@ public class VistaLogin extends javax.swing.JFrame {
         userPass.setBackground(new java.awt.Color(240, 240, 240));
         userPass.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 >>>>>>> ramafrancisco
+=======
+        userName.setBackground(new java.awt.Color(240, 240, 240));
+        userName.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        userName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userNameActionPerformed(evt);
+            }
+        });
+
+        userPass.setBackground(new java.awt.Color(240, 240, 240));
+        userPass.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+>>>>>>> ramaManuel
         userPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userPassActionPerformed(evt);
@@ -103,7 +132,10 @@ public class VistaLogin extends javax.swing.JFrame {
         });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ramaManuel
         jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/group.png"))); // NOI18N
 
@@ -158,7 +190,11 @@ public class VistaLogin extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addContainerGap(47, Short.MAX_VALUE)
+=======
+                .addContainerGap(35, Short.MAX_VALUE)
+>>>>>>> ramaManuel
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -177,11 +213,15 @@ public class VistaLogin extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
         );
 
+<<<<<<< HEAD
 >>>>>>> ramafrancisco
+=======
+>>>>>>> ramaManuel
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
 <<<<<<< HEAD
             .addGroup(layout.createSequentialGroup()
                 .addGap(97, 97, 97)
@@ -190,10 +230,14 @@ public class VistaLogin extends javax.swing.JFrame {
                     .addComponent(btnInicia, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                     .addComponent(userName))
                 .addContainerGap(123, Short.MAX_VALUE))
+=======
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+>>>>>>> ramaManuel
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(53, 53, 53)
                 .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -208,23 +252,35 @@ public class VistaLogin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 >>>>>>> ramafrancisco
+=======
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+>>>>>>> ramaManuel
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ramaManuel
     private void userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_userNameActionPerformed
 
+<<<<<<< HEAD
 >>>>>>> ramafrancisco
+=======
+>>>>>>> ramaManuel
     private void userPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userPassActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_userPassActionPerformed
 
     private void btnIniciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciaActionPerformed
+<<<<<<< HEAD
 <<<<<<< HEAD
         // TODO add your handling code here:
     }//GEN-LAST:event_btnIniciaActionPerformed
@@ -233,11 +289,19 @@ public class VistaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:.  
     }//GEN-LAST:event_btnIniciaActionPerformed
 
+=======
+        // TODO add your handling code here:.  
+    }//GEN-LAST:event_btnIniciaActionPerformed
+
+>>>>>>> ramaManuel
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+<<<<<<< HEAD
 >>>>>>> ramafrancisco
+=======
+>>>>>>> ramaManuel
     /**
      * @param args the command line arguments
      */
@@ -265,9 +329,12 @@ public class VistaLogin extends javax.swing.JFrame {
         }
         //</editor-fold>
 <<<<<<< HEAD
+<<<<<<< HEAD
         //</editor-fold>
 =======
 >>>>>>> ramafrancisco
+=======
+>>>>>>> ramaManuel
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -279,8 +346,11 @@ public class VistaLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
 <<<<<<< HEAD
+<<<<<<< HEAD
     public javax.swing.JButton btnInicia;
 =======
+=======
+>>>>>>> ramaManuel
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnInicia;
     public javax.swing.JButton btnRegistrar;
@@ -288,7 +358,10 @@ public class VistaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+<<<<<<< HEAD
 >>>>>>> ramafrancisco
+=======
+>>>>>>> ramaManuel
     public javax.swing.JTextField userName;
     public javax.swing.JPasswordField userPass;
     // End of variables declaration//GEN-END:variables

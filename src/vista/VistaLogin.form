@@ -3,6 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -21,6 +22,10 @@
     <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="undecorated" type="boolean" value="true"/>
 >>>>>>> ramafrancisco
+=======
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="undecorated" type="boolean" value="true"/>
+>>>>>>> ramaManuel
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -42,6 +47,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
 <<<<<<< HEAD
+<<<<<<< HEAD
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -54,19 +60,18 @@
 =======
           <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
 >>>>>>> ramafrancisco
+=======
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+>>>>>>> ramaManuel
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
 <<<<<<< HEAD
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-              <Component id="userName" min="-2" pref="42" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="userPass" min="-2" pref="42" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-              <Component id="btnInicia" min="-2" pref="42" max="-2" attributes="0"/>
-              <EmptySpace pref="54" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
 =======
           <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
@@ -75,6 +80,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <Component class="javax.swing.JButton" name="btnInicia">
       <Properties>
@@ -97,9 +103,22 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JPasswordField" name="userPass">
+=======
+    <Container class="javax.swing.JPanel" name="jPanel1">
+>>>>>>> ramaManuel
       <Properties>
-        <Property name="text" type="java.lang.String" value="123456asdf"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder>
+              <Color PropertyName="color" blue="69" green="65" red="12" type="rgb"/>
+            </LineBorder>
+          </Border>
+        </Property>
       </Properties>
+<<<<<<< HEAD
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userPassActionPerformed"/>
       </Events>
@@ -121,6 +140,8 @@
           </Border>
         </Property>
       </Properties>
+=======
+>>>>>>> ramaManuel
 
       <Layout>
         <DimensionLayout dim="0">
@@ -158,7 +179,11 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
+<<<<<<< HEAD
                   <EmptySpace pref="47" max="32767" attributes="0"/>
+=======
+                  <EmptySpace pref="35" max="32767" attributes="0"/>
+>>>>>>> ramaManuel
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jLabel1" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="userName" min="-2" pref="40" max="-2" attributes="0"/>
@@ -316,6 +341,9 @@
         </Component>
       </SubComponents>
     </Container>
+<<<<<<< HEAD
 >>>>>>> ramafrancisco
+=======
+>>>>>>> ramaManuel
   </SubComponents>
 </Form>
