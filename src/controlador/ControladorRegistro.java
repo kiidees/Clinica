@@ -18,7 +18,6 @@ public class ControladorRegistro implements ActionListener {
         this.vista = vista;
         this.modelo = modelo;
         this.vista.btnRegistrar.addActionListener(this);
-        this.modelo.conect.conectar();
     }
     
     public void iniciar(){

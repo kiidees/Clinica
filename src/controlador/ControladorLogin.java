@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import modelo.ModeloLogin;
+import vista.VistaInicio;
 import vista.VistaLogin;
 
 
@@ -24,10 +25,13 @@ public class ControladorLogin implements ActionListener{
         this.vista.btnRegistrar.addActionListener(this);
         this.modelo.conect.conectar();
     }
+
+    public ControladorLogin() {
+        vista.setVisible(false);
+    }
     
     public void iniciar(){
         vista.setTitle("Hesi-Re v1.0.0");
-        vista.setLocationRelativeTo(null);
         vista.setLocationRelativeTo(null);
         vista.setResizable(false);
         vista.setIconImage(new ImageIcon(getClass().getResource("/icon/tooth.png")).getImage());

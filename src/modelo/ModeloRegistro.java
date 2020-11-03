@@ -1,6 +1,7 @@
 package modelo;
 
 import BD.Conexion;
+import controlador.ControladorLogin;
 import encriptacion.Base64;
 import java.net.ConnectException;
 import java.sql.ResultSet;
@@ -22,7 +23,6 @@ public class ModeloRegistro {
     private int acceso;
     private int telefono;
     
-    public Conexion conect = new Conexion();
     Base64 base = new Base64();
     
     public String getUsuario() {
@@ -89,14 +89,6 @@ public class ModeloRegistro {
         this.telefono = telefono;
     }
 
-    public Conexion getConect() {
-        return conect;
-    }
-
-    public void setConect(Conexion conect) {
-        this.conect = conect;
-    }
-
     public Base64 getBase() {
         return base;
     }
@@ -114,7 +106,7 @@ public class ModeloRegistro {
     }
     
     public void registroUsuario() throws SQLException, ConnectException, PSQLException, ClassNotFoundException {
-        Conexion modConf = new ModeloLogin().conect.conectar();
+        Conexion modConf = new ModeloLogin().getConect();
         if (this.password.equals(this.passconfirmation)) {
             if (this.acceso > 0 && this.acceso < 4) {
                 try {

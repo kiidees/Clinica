@@ -1,12 +1,14 @@
 package modelo;
 
 import BD.Conexion;
+import controlador.ControladorLogin;
 import encriptacion.Base64;
 import java.net.ConnectException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import vista.VistaRegistro;
+import vista.VistaUsuarios;
 
 public class ModeloLogin {
 
@@ -62,11 +64,17 @@ public class ModeloLogin {
                 //termina desencriptacion
                 if (passUnsure.equals(this.password)) {
                     if (estadoUsuario == true) {
+                        VistaUsuarios vistaUsuario = new VistaUsuarios();
                         System.out.println("Usuario Activo");
                         int tipoUsuario = Integer.parseInt(resultados.getString(2)); //acceso de usuario
                         switch (tipoUsuario) {
                             case 1:
-                                /*aqui se implementa el nivel de acceso*/ System.out.println("Administrador");
+                                /*aqui se implementa el nivel de acceso*/
+                                ControladorLogin login = new ControladorLogin();
+                                //login.vista.setVisible(false);
+                                vistaUsuario.setLocationRelativeTo(null);
+                                vistaUsuario.setVisible(true);
+                                System.out.println("Administrador");
                                 break;
                             case 2:
                                 /*aqui se implementa el nivel de acceso*/ System.out.println("Doctor");
