@@ -24,7 +24,7 @@ public class Conexion {
     private Connection conexion;
     private String usuario;
     private String contraseña;
-    private String url = "jdbc:postgresql://localhost:5432/clinica2?user=postgres&password=contrasenia";
+    private String url = "jdbc:postgresql://localhost:5432/clinica2?user=postgres&password=Iw1llK1lly0u";
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
