@@ -39,7 +39,7 @@ public class ControladorRegistro implements ActionListener {
             modelo.setEstado(Boolean.parseBoolean(vista.txtEstado.getText()));
             modelo.setPassword(vista.txtContraseña.getText());
             modelo.setPassconfirmation(vista.txtConfContraseña.getText());
-            modelo.setTelefono(Integer.parseInt(vista.txtTelefono.getText().substring(10)));
+            modelo.setTelefono(Integer.parseInt(vista.txtTelefono.getText()));
             modelo.setDireccion(vista.txtDireccion.getText());
             try {
                 modelo.registroUsuario();
