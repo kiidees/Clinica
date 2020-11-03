@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
@@ -5,3 +6,23 @@
         <group/>
     </open-files>
 </project-private>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/Documentos/ProyectosGitHub/Clinica/src/modelo/ModeloLogin.java</file>
+            <file>file:/D:/Documentos/ProyectosGitHub/Clinica/src/vista/VistaLogin.java</file>
+            <file>file:/D:/Documentos/ProyectosGitHub/Clinica/src/modelo/ModeloInicio.java</file>
+            <file>file:/D:/Documentos/ProyectosGitHub/Clinica/src/controlador/ControladorInicio.java</file>
+            <file>file:/D:/Documentos/ProyectosGitHub/Clinica/src/controlador/ControladorLogin.java</file>
+            <file>file:/D:/Documentos/ProyectosGitHub/Clinica/src/vista/VistaUsuarios.java</file>
+            <file>file:/D:/Documentos/ProyectosGitHub/Clinica/src/modelo/ModeloUsuarios.java</file>
+            <file>file:/D:/Documentos/ProyectosGitHub/Clinica/src/controlador/ControladorUsuarios.java</file>
+            <file>file:/D:/Documentos/ProyectosGitHub/Clinica/src/mvc/MVC.java</file>
+            <file>file:/D:/Documentos/ProyectosGitHub/Clinica/src/vista/VistaInicio.java</file>
+        </group>
+    </open-files>
+</project-private>
+>>>>>>> ramafrancisco
