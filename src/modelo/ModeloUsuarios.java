@@ -7,23 +7,26 @@ import vista.VistaUsuarios;
 public class ModeloUsuarios {
     
     
-    public void iniciaDoctor(){
+    public void iniciaDoctor(String nombre){
         
         VistaUsuarios vista = new VistaUsuarios();
         ModeloUsuarios modelo = new ModeloUsuarios();
         ControladorUsuarios control = new ControladorUsuarios(vista, modelo);
         control.iniciar();
         vista.setVisible(true);
+        vista.btnConfiguracion.setVisible(false);
+        vista.jLabelBienvenido.setText("HOLA, BIENVENIDO DOCTOR "+nombre);
         //Botenes desabilitados
         
     }
     
-    public void inicioAdministrador(){
+    public void inicioAdministrador(String nombre){
         VistaUsuarios vista = new VistaUsuarios();
         ModeloUsuarios modelo = new ModeloUsuarios();
         ControladorUsuarios control = new ControladorUsuarios(vista, modelo);
         control.iniciar();
         vista.setVisible(true);
+        vista.jLabelBienvenido.setText("HOLA, BIENVENIDO DOCTOR "+nombre);
         //Botenes desabilitados
         /*vista.jButton1.setEnabled(false);
         vista.jButton2.setEnabled(false);
@@ -36,12 +39,13 @@ public class ModeloUsuarios {
         vista.jButton4.setVisible(false);
     }
     
-    public void inicioAyudante(){
+    public void inicioAyudante(String nombre){
         VistaUsuarios vista = new VistaUsuarios();
         ModeloUsuarios modelo = new ModeloUsuarios();
         ControladorUsuarios control = new ControladorUsuarios(vista, modelo);
         control.iniciar();
         vista.setVisible(true);
+        vista.jLabelBienvenido.setText("HOLA, BIENVENIDO ASISTENTE "+nombre);
         //Botenes desabilitados
         vista.jButton1.setEnabled(false);
         vista.jButton2.setEnabled(false);

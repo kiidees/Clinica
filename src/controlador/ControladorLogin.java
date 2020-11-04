@@ -44,14 +44,10 @@ public class ControladorLogin implements ActionListener{
             modelo.setUsuario(vista.userName.getText().toUpperCase());
             modelo.setPassword(vista.userPass.getText());
             try {
+                modelo.verificaUsuario();
                 if (modelo.isStad()) {
                     vista.setVisible(false);
                 }
-            } catch (Exception ex) {
-                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try {
-                modelo.verificaUsuario();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception ex) {
@@ -61,6 +57,15 @@ public class ControladorLogin implements ActionListener{
         //Accion CANCELAR
         if(e.getSource() == vista.btnCancelar){
             vista.setVisible(false);
+            try {
+                mvc.MVC.main(null);
+            } catch (ConnectException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }//Fin if
         //Accion Registrarse
         if(e.getSource() == vista.btnRegistrar){

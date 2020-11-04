@@ -11,10 +11,12 @@ import vista.VistaRegistro;
 import vista.VistaUsuarios;
 
 public class ModeloLogin {
+    
+    VistaRegistro vista = new VistaRegistro();
+    ModeloRegistro modelo = new ModeloRegistro();
 
     public void Registro() throws ConnectException, ClassNotFoundException, SQLException{
-        VistaRegistro vista = new VistaRegistro();
-        ModeloRegistro modelo = new ModeloRegistro();
+        
         controlador.ControladorRegistro control = new controlador.ControladorRegistro(vista, modelo);
         control.iniciar();
         vista.setVisible(true);
@@ -64,7 +66,7 @@ public class ModeloLogin {
         boolean estado = false;
         boolean estadoUsuario = false;
         ResultSet resultados = conect.consultar("select * from usuarios where rfcusuario = '" + this.usuario + "' and estado = TRUE");
-        VistaUsuarios vistaUsuario = new VistaUsuarios();
+        ModeloUsuarios mostrarVista = new ModeloUsuarios();
 
         if (resultados.next()) {
             try {//comienza desencriptacion desde BD
@@ -74,27 +76,24 @@ public class ModeloLogin {
                 //termina desencriptacion
                 if (passUnsure.equals(this.password)) {
                     if (estadoUsuario == true) {
-                        
+                        vista.setVisible(false);
                         System.out.println("Usuario Activo");
                         estado = true;
                         int tipoUsuario = Integer.parseInt(resultados.getString(2)); //acceso de usuario
                         switch (tipoUsuario) {
                             case 1:
                                 /*aqui se implementa el nivel de acceso*/
-                                vistaUsuario.setLocationRelativeTo(null);
-                                vistaUsuario.setVisible(true);
+                                mostrarVista.inicioAdministrador(resultados.getString(7));
                                 System.out.println("Administrador");
                                 break;
                             case 2:
                                 /*aqui se implementa el nivel de acceso*/
-                                vistaUsuario.setLocationRelativeTo(null);
-                                vistaUsuario.setVisible(true);
+                                mostrarVista.iniciaDoctor(resultados.getString(7));
                                 System.out.println("Doctor");
                                 break;
                             case 3:
                                 /*aqui se implementa el nivel de acceso*/
-                                vistaUsuario.setLocationRelativeTo(null);
-                                vistaUsuario.setVisible(true);
+                                mostrarVista.inicioAyudante(resultados.getString(7));
                                 System.out.println("Ayudante de doctor");
                                 break;
                             default:
