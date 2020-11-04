@@ -22,6 +22,7 @@ public class ModeloLogin {
     
     private String usuario;
     private String password;
+    public boolean stad;
 
     //public Conexion conect = new Conexion().conectar();
     public Conexion conect = new Conexion();
@@ -51,10 +52,19 @@ public class ModeloLogin {
         this.password = password;
     }
 
+    public boolean isStad() {
+        return stad;
+    }
+
+    public void setStad(boolean stad) {
+        this.stad = stad;
+    }
+    
     public void verificaUsuario() throws SQLException, Exception {
         boolean estado = false;
         boolean estadoUsuario = false;
         ResultSet resultados = conect.consultar("select * from usuarios where rfcusuario = '" + this.usuario + "' and estado = TRUE");
+        VistaUsuarios vistaUsuario = new VistaUsuarios();
 
         if (resultados.next()) {
             try {//comienza desencriptacion desde BD
@@ -64,23 +74,28 @@ public class ModeloLogin {
                 //termina desencriptacion
                 if (passUnsure.equals(this.password)) {
                     if (estadoUsuario == true) {
-                        VistaUsuarios vistaUsuario = new VistaUsuarios();
+                        
                         System.out.println("Usuario Activo");
+                        estado = true;
                         int tipoUsuario = Integer.parseInt(resultados.getString(2)); //acceso de usuario
                         switch (tipoUsuario) {
                             case 1:
                                 /*aqui se implementa el nivel de acceso*/
-                                ControladorLogin login = new ControladorLogin();
-                                //login.vista.setVisible(false);
                                 vistaUsuario.setLocationRelativeTo(null);
                                 vistaUsuario.setVisible(true);
                                 System.out.println("Administrador");
                                 break;
                             case 2:
-                                /*aqui se implementa el nivel de acceso*/ System.out.println("Doctor");
+                                /*aqui se implementa el nivel de acceso*/
+                                vistaUsuario.setLocationRelativeTo(null);
+                                vistaUsuario.setVisible(true);
+                                System.out.println("Doctor");
                                 break;
                             case 3:
-                                /*aqui se implementa el nivel de acceso*/ System.out.println("Ayudante de doctor");
+                                /*aqui se implementa el nivel de acceso*/
+                                vistaUsuario.setLocationRelativeTo(null);
+                                vistaUsuario.setVisible(true);
+                                System.out.println("Ayudante de doctor");
                                 break;
                             default:
                                 throw new AssertionError();
@@ -93,7 +108,7 @@ public class ModeloLogin {
                     JOptionPane.showMessageDialog(null, "Verifica tu Usuario y Contraseña");
                 }
 
-                estado = true;
+                
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -101,7 +116,8 @@ public class ModeloLogin {
             JOptionPane.showMessageDialog(null, "Verifica tu Usuario y Contraseña");
             estado = false;
         }
-
+        this.setStad(estado);
+        //return estado;
     }
 
 }
