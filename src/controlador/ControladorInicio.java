@@ -36,6 +36,7 @@ public class ControladorInicio implements ActionListener {
 
         try {
             modelo.IniciaSesion();
+            vista.setVisible(false);
         } catch (ConnectException | ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ControladorInicio.class.getName()).log(Level.SEVERE, null, ex);
         }

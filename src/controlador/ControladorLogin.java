@@ -19,17 +19,19 @@ public class ControladorLogin implements ActionListener{
         this.vista = vista;
         this.modelo = modelo;
         this.vista.btnInicia.addActionListener(this);
+        this.vista.btnRegistrar.addActionListener(this);
         this.vista.btnCancelar.addActionListener(this);
         this.modelo.conect.conectar();
     }
+
+    public ControladorLogin() {
+        vista.setVisible(false);
+    }
     
     public void iniciar(){
-        vista.setTitle("Hesi-Re v1.0.0");
-        vista.setLocationRelativeTo(null);
         vista.setLocationRelativeTo(null);
         vista.setResizable(false);
         vista.setIconImage(new ImageIcon(getClass().getResource("/icon/tooth.png")).getImage());
-        
     }
    
     @Override
@@ -40,6 +42,9 @@ public class ControladorLogin implements ActionListener{
             modelo.setPassword(vista.userPass.getText());
             try {
                 modelo.verificaUsuario();
+                if (modelo.isStad()) {
+                    vista.setVisible(false);
+                }
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception ex) {
@@ -49,7 +54,29 @@ public class ControladorLogin implements ActionListener{
         //Accion CANCELAR
         if(e.getSource() == vista.btnCancelar){
             vista.setVisible(false);
+            try {
+                mvc.MVC.main(null);
+            } catch (ConnectException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }//Fin if
+        //Accion Registrarse
+        if(e.getSource() == vista.btnRegistrar){
+            try {
+                vista.setVisible(false);
+                modelo.Registro();
+            } catch (ConnectException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
     }//Fin actionPerformed
     

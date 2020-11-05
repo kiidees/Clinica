@@ -14,6 +14,7 @@ public class Conexion {
     private Connection conexion;
     private String usuario;
     private String contraseña;
+    //private String url = "jdbc:postgresql://localhost:5432/clinica2?user=postgres&password=Iw1llK1lly0u";
     private String url = "jdbc:postgresql://localhost:5433/Clinica?user=postgres&password=root";
 
     public void setUsuario(String usuario) {
@@ -80,6 +81,17 @@ public class Conexion {
             return false;
         }
         return true;
+    }
+    
+    public ResultSet insertar (String sql){
+            ResultSet resultado;
+        try {
+            Statement sentencia = getConexion().createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+            resultado = sentencia.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
