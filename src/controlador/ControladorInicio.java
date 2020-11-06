@@ -32,6 +32,7 @@ public class ControladorInicio implements ActionListener {
 
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
 
         try {

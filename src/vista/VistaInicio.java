@@ -61,7 +61,7 @@ public class VistaInicio extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(22, 46, 92));
-        jLabel4.setText("de tu sonria.");
+        jLabel4.setText("de tu sonrisa.");
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N

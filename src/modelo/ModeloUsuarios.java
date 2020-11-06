@@ -1,6 +1,8 @@
 package modelo;
 
 import controlador.ControladorUsuarios;
+import java.net.ConnectException;
+import java.sql.SQLException;
 import vista.VistaUsuarios;
 
 
@@ -14,11 +16,9 @@ public class ModeloUsuarios {
         ControladorUsuarios control = new ControladorUsuarios(vista, modelo);
         control.iniciar();
         vista.setVisible(true);
-        vista.jLabelBienvenido.setText("HOLA, BIENVENIDO DOCTOR "+nombre);
-        //Botenes desabilitados
-        vista.jLabelConfiguracion.setEnabled(false);
-        vista.btnConfiguracion.setEnabled(false);
         
+        //Deshabilitacion de botones
+        vista.btnConfiguracion.setVisible(false);
     }
     
     public void inicioAdministrador(String nombre){
@@ -27,13 +27,12 @@ public class ModeloUsuarios {
         ControladorUsuarios control = new ControladorUsuarios(vista, modelo);
         control.iniciar();
         vista.setVisible(true);
-        vista.jLabelBienvenido.setText("HOLA, BIENVENIDO ADMINISTRADOR "+nombre);
-        //Botones desabilitados
-        vista.btnAnadir.setVisible(false);
-        vista.jButton1.setVisible(false);
-        vista.jButton2.setVisible(false);
-        vista.jButton3.setVisible(false);
-        vista.jButton4.setVisible(false);
+        
+        //Deshabilitacion de botones
+        vista.jButton10.setVisible(false);
+        vista.jButton9.setVisible(false);
+        vista.jButton8.setVisible(false);
+        vista.btnTeam.setVisible(false);
     }
     
     public void inicioAyudante(String nombre){
@@ -42,15 +41,22 @@ public class ModeloUsuarios {
         ControladorUsuarios control = new ControladorUsuarios(vista, modelo);
         control.iniciar();
         vista.setVisible(true);
-        vista.jLabelBienvenido.setText("HOLA, BIENVENIDO "+nombre);
-        //Botenes desabilitados
-        vista.jButton1.setVisible(false);
-        vista.jButton2.setEnabled(false);
-        vista.jButton3.setEnabled(false);
-        vista.jButton4.setEnabled(false);
-        vista.btnAnadir.setEnabled(false);
-        vista.btnConfiguracion.setEnabled(false);
-        vista.jLabelConfiguracion.setEnabled(false);
+        
+        //deshabilitacion de botones
+        vista.btnCrear.setVisible(false);
+        vista.btnConfiguracion.setVisible(false);
+        vista.jButton10.setVisible(false);
+        vista.jButton9.setVisible(false);
+        vista.jButton8.setVisible(false);
+        vista.btnTeam.setVisible(false);
+    }
+    
+    public void Bajas() throws ConnectException, ClassNotFoundException, SQLException{
+        /*VistaOperaciones vista = new VistaOperaciones();
+        ModeloOperaciones modelo = new ModeloOperaciones();
+        ControladorOperaciones control = new ControladorOperaciones(vista, modelo);
+        control.iniciar();
+        vista.setVisible(true);*/
     }
     
 }//Fin ModeloUsuarios

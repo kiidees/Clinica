@@ -1,13 +1,11 @@
 package modelo;
 
 import BD.Conexion;
-import controlador.ControladorLogin;
 import encriptacion.Base64;
 import java.net.ConnectException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import controlador.ControladorRegistro;
 import org.postgresql.util.PSQLException;
 import vista.VistaRegistro;
 
@@ -21,9 +19,10 @@ public class ModeloRegistro {
     private String direccion;
     private boolean estado;
     private int acceso;
-    private int telefono;
+    private long telefono;
     
     Base64 base = new Base64();
+    public Conexion conect = new Conexion();
     
     public String getUsuario() {
         return usuario;
@@ -81,11 +80,11 @@ public class ModeloRegistro {
         this.acceso = Acceso;
     }
 
-    public int getTelefono() {
+    public long getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
 
@@ -107,15 +106,20 @@ public class ModeloRegistro {
     
     public void registroUsuario() throws SQLException, ConnectException, PSQLException, ClassNotFoundException {
         Conexion modConf = new ModeloLogin().getConect();
+        ResultSet Registro = conect.insertar("insert into usuarios ( rfcusuario,"
+                            + " acceso,apellidousuario, \"contraseña\",direccionusuario,"
+                            + " estado,  nombreusuario,  telefonousuario )"
+                            + " VALUES ('" + this.RFC + "', " + this.acceso + " ,'" + this.apellidos + "','" + base.encode(this.password)
+                            + "','" + this.direccion + "'," + this.estado + ",'" + this.usuario + "', " + this.telefono+ ")");
+        
         if (this.password.equals(this.passconfirmation)) {
             if (this.acceso > 0 && this.acceso < 4) {
                 try {
-                    if (modConf.ejecutar("insert into usuarios ( rfcusuario,"
+                    if (Registro.next()/*modConf.ejecutar("insert into usuarios ( rfcusuario,"
                             + " acceso,apellidousuario, \"contraseña\",direccionusuario,"
                             + " estado,  nombreusuario,  telefonousuario"
                             + ") VALUES ('" + this.RFC + "'," + this.acceso + ",'" + this.apellidos + "','" + base.encode(this.password)
-                            + "','" + this.direccion + "'," + this.estado + ",'" + this.usuario + "'," + this.telefono + ")")) {
-
+                            + "','" + this.direccion + "'," + this.estado + ",'" + this.usuario + "'," + this.telefono + ")")*/) {
                         System.out.println("Ejecución correcta!");
                     } else {
                         JOptionPane.showMessageDialog(null, "¡Datos ya registrados!");
