@@ -22,6 +22,7 @@ public class ControladorLogin implements ActionListener{
         this.vista.btnInicia.addActionListener(this);
         this.vista.btnCancelar.addActionListener(this);
         this.vista.btnRegistrar.addActionListener(this);
+        this.vista.btnEliminar.addActionListener(this);
         this.modelo.conect.conectar();
     }
     
@@ -55,6 +56,17 @@ public class ControladorLogin implements ActionListener{
         if(e.getSource() == vista.btnRegistrar){
             try {
                 modelo.Registro();
+            } catch (ConnectException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        if(e.getSource() == vista.btnEliminar){
+            try {
+                modelo.Bajas();    
             } catch (ConnectException ex) {
                 Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {

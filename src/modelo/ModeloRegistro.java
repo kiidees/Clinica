@@ -3,12 +3,9 @@ package modelo;
 import BD.Conexion;
 import encriptacion.Base64;
 import java.net.ConnectException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import controlador.ControladorRegistro;
 import org.postgresql.util.PSQLException;
-import vista.VistaRegistro;
 
 public class ModeloRegistro {
     
