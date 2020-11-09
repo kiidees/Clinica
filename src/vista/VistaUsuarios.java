@@ -46,7 +46,7 @@ public class VistaUsuarios extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnOperaciones = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -210,9 +210,9 @@ public class VistaUsuarios extends javax.swing.JFrame {
 
         jLabel1.setText("Overflow");
 
-        jButton1.setBackground(new java.awt.Color(246, 164, 13));
-        jButton1.setText("jButton1");
-        jButton1.setBorder(null);
+        btnOperaciones.setBackground(new java.awt.Color(246, 164, 13));
+        btnOperaciones.setText("jButton1");
+        btnOperaciones.setBorder(null);
 
         jButton2.setBackground(new java.awt.Color(246, 142, 154));
         jButton2.setText("jButton2");
@@ -265,7 +265,7 @@ public class VistaUsuarios extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                        .addComponent(btnOperaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -290,7 +290,7 @@ public class VistaUsuarios extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -355,9 +355,9 @@ public class VistaUsuarios extends javax.swing.JFrame {
     public javax.swing.JButton btnCalendario;
     public javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnConfiguracion;
+    public javax.swing.JButton btnOperaciones;
     public javax.swing.JButton btnPerfil;
     public javax.swing.JButton btnVista;
-    public javax.swing.JButton jButton1;
     public javax.swing.JButton jButton2;
     public javax.swing.JButton jButton3;
     public javax.swing.JButton jButton4;

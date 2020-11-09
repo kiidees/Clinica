@@ -1,14 +1,12 @@
 package modelo;
 
 import BD.Conexion;
-import controlador.ControladorLogin;
 import encriptacion.Base64;
 import java.net.ConnectException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import vista.VistaRegistro;
-import vista.VistaUsuarios;
 
 public class ModeloLogin {
     

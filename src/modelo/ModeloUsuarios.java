@@ -33,7 +33,7 @@ public class ModeloUsuarios {
         vista.jButton3.setEnabled(false);
         vista.jButton4.setEnabled(false);*/
         vista.btnAnadir.setVisible(false);
-        vista.jButton1.setVisible(false);
+        vista.btnOperaciones.setVisible(false);
         vista.jButton2.setVisible(false);
         vista.jButton3.setVisible(false);
         vista.jButton4.setVisible(false);
@@ -47,7 +47,7 @@ public class ModeloUsuarios {
         vista.setVisible(true);
         vista.jLabelBienvenido.setText("HOLA, BIENVENIDO ASISTENTE "+nombre);
         //Botenes desabilitados
-        vista.jButton1.setEnabled(false);
+        vista.btnOperaciones.setEnabled(false);
         vista.jButton2.setEnabled(false);
         vista.jButton3.setEnabled(false);
         vista.jButton4.setEnabled(false);
