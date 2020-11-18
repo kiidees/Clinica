@@ -32,7 +32,8 @@ public class ModelAnadir {
     private String rfcDoctor;
     private VistaAnadir vistaAna;
     Conexion modConf = ControladorLogin.obtenerConexion();
-
+    String doctor = "";
+    
     public VistaAnadir getVistaAna() {
         return vistaAna;
     }
@@ -90,7 +91,7 @@ public class ModelAnadir {
     }
 
     public void buscarPaciente() throws SQLException, ConnectException, PSQLException, ClassNotFoundException {
-        String doctor = ModeloLogin.getUsuario();
+        doctor = ModeloLogin.getUsuario();
         ResultSet resultados = modConf.consultar("SELECT * FROM \"public\".PACIENTES where rfc_paciente = '" + this.getRfcPaciente() + "' and "
                 + "rfcusuario = '" + doctor + "'");
 
@@ -138,7 +139,7 @@ public class ModelAnadir {
             if (modConf.ejecutar("INSERT INTO ingreso_pacientes (id_ingresopac, rfc_paciente, fecha_ingreso) \n"
                     + "	VALUES (" + idIngreso + ", '" + this.getRfcPaciente() + "', '" + ts + "')")) {
                 JOptionPane.showMessageDialog(null, "¡Datos correctamente registrados!");
-                this.getVistaAna().setVisible(false);
+                this.vistaAna.setVisible(false);
                 ModeloServEstom modservestom = new ModeloServEstom();
                 VistaServEstom vistaservestom = new VistaServEstom();
                 ControladorServEstom ctrlsrv = new ControladorServEstom(vistaservestom, modservestom);
@@ -152,10 +153,42 @@ public class ModelAnadir {
     }
 
     public void actualizar() throws SQLException, ConnectException, PSQLException, ClassNotFoundException {
+        
+        try {
+            /*if (modConf.ejecutar("UPDATE pacientes SET "
+                    + "nombrepaciente = '"+this.nombrePaciente+"' "
+                    + "apellidospaciente = '"+this.apellidosPaciente+"' "
+                    + "domiciliopaciente = '"+this.domicilioPaciente+"' "
+                    + "telefono = "+this.telefonoPaciente+" "
+                    + "WHERE rfc_paciente = '"+this.rfcPaciente+"'")) */
+            if(modConf.ejecutar("UPDATE pacientes SET nombrepaciente = '"+this.nombrePaciente+"', \n" +
+"apellidospaciente = '"+this.apellidosPaciente+"', \n" +
+"domiciliopaciente = '"+this.domicilioPaciente+"', \n" +
+"telefono = "+this.telefonoPaciente+" \n" +
+"WHERE rfc_paciente = '"+this.rfcPaciente+"'")){
+                JOptionPane.showMessageDialog(null, "¡Datos correctamente actualizados!");
+                this.vistaAna.btnGuardar.setEnabled(false);
+                this.vistaAna.btnBuscar.setEnabled(false);
+                this.vistaAna.btnModificar.setEnabled(false);
+                this.vistaAna.btnSiguiente.setEnabled(true);
+            }
+        } catch (Exception e) {
+        }
 
     }
 
     public void guardar() throws SQLException, ConnectException, PSQLException, ClassNotFoundException {
+        try {
+            if (modConf.ejecutar("INSERT INTO pacientes (rfc_paciente, nombrepaciente, apellidospaciente, domiciliopaciente, telefono, rfcusuario) \n" +
+"	VALUES ('"+this.rfcPaciente+"', '"+this.nombrePaciente+"', '"+this.apellidosPaciente+"', '"+this.domicilioPaciente+"', "+this.telefonoPaciente+", '"+doctor+"')")) {
+                JOptionPane.showMessageDialog(null, "¡Datos correctamente registrados!");
+                this.vistaAna.btnGuardar.setEnabled(false);
+                this.vistaAna.btnBuscar.setEnabled(false);
+                this.vistaAna.btnModificar.setEnabled(false);
+                this.vistaAna.btnSiguiente.setEnabled(true);
+            }
+        } catch (Exception e) {
+        }
 
     }
 }

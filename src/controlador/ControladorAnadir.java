@@ -27,13 +27,14 @@ public class ControladorAnadir implements ActionListener{
         this.vistaAnadir = vistaAnadir;
         this.modeloAnadir = modeloAnadir;
         this.vistaAnadir.btnBuscar.addActionListener(this);
+        this.vistaAnadir.btnModificar.addActionListener(this);
         this.vistaAnadir.btnSiguiente.addActionListener(this);
         this.vistaAnadir.btnGuardar.addActionListener(this);
+        this.vistaAnadir.btnCancel.addActionListener(this);
     }
 
     public void iniciar(){  
         vistaAnadir.setTitle("Hesi-Re v1.0.0");
-        vistaAnadir.setLocation(50, 0);
         vistaAnadir.setResizable(false);
         vistaAnadir.setIconImage(new ImageIcon(getClass().getResource("/icon/tooth.png")).getImage());
         vistaAnadir.setLocationRelativeTo(null);
@@ -65,6 +66,34 @@ public class ControladorAnadir implements ActionListener{
             } catch (Exception e) {
             }
             
+        }
+        
+        if (ae.getSource() == vistaAnadir.btnGuardar) {
+            try {
+                modeloAnadir.setApellidosPaciente(vistaAnadir.txtApellidos.getText());
+                modeloAnadir.setNombrePaciente(vistaAnadir.txtNombre.getText());
+                modeloAnadir.setDomicilioPaciente(vistaAnadir.txtDireccion.getText());
+                modeloAnadir.setRfcPaciente(vistaAnadir.txtRFCusuario.getText());
+                modeloAnadir.setTelefonoPaciente(Long.parseLong(vistaAnadir.txtTelefono.getText()));
+                modeloAnadir.guardar();
+            } catch (Exception e) {
+            }
+        }
+        
+        if (ae.getSource() == vistaAnadir.btnModificar) {
+            try {
+                modeloAnadir.setApellidosPaciente(vistaAnadir.txtApellidos.getText());
+                modeloAnadir.setNombrePaciente(vistaAnadir.txtNombre.getText());
+                modeloAnadir.setDomicilioPaciente(vistaAnadir.txtDireccion.getText());
+                modeloAnadir.setRfcPaciente(vistaAnadir.txtRFCusuario.getText());
+                modeloAnadir.setTelefonoPaciente(Long.parseLong(vistaAnadir.txtTelefono.getText()));
+                modeloAnadir.actualizar();
+            } catch (Exception e) {
+            }
+        }
+        
+        if (ae.getSource() == vistaAnadir.btnCancel) {
+            vistaAnadir.setVisible(false);
         }
     }
     
