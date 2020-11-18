@@ -17,7 +17,7 @@ public class NewMain {
     public static void main(String[] args) {
         // TODO code application logic here
         Base64 base = new Base64();
-        System.out.println(base.encode("adjfhaskjdfh$%/%!"));
+        System.out.println(base.decode("UGFtZWxhXzMwMTU="));
         System.out.println("adjfhaskjdfh$%/%!".length());
     }
     

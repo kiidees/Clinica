@@ -20,7 +20,7 @@ public class ModeloLogin {
         vista.setVisible(true);
 }
     
-    private String usuario;
+    private static String usuario;
     private String password;
     public boolean stad;
 
@@ -36,7 +36,7 @@ public class ModeloLogin {
         this.conect = conect;
     }
 
-    public String getUsuario() {
+    public static String getUsuario() {
         return usuario;
     }
 

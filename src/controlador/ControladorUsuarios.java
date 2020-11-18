@@ -7,8 +7,10 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import modelo.ModelAnadir;
 import modelo.ModeloOperaciones;
 import modelo.ModeloUsuarios;
+import vista.VistaAnadir;
 import vista.VistaOperaciones;
 import vista.VistaUsuarios;
 
@@ -24,7 +26,7 @@ public class ControladorUsuarios implements ActionListener{
         this.modelo = modelo;
         this.vista.btnCerrar.addActionListener(this);
         this.vista.btnOperaciones.addActionListener(this);
-
+        this.vista.btnAnadir.addActionListener(this);
     
     }
     
@@ -73,6 +75,23 @@ public class ControladorUsuarios implements ActionListener{
             }
             
         
+        }
+        
+        if (e.getSource() == vista.btnAnadir) {
+            //try {
+                VistaAnadir vistaAnadir = new VistaAnadir();
+                ModelAnadir modelAnadir = new ModelAnadir();
+                ControladorAnadir ctrlAnadir = new ControladorAnadir(vistaAnadir, modelAnadir);
+                ctrlAnadir.iniciar();
+                vistaAnadir.setVisible(true);
+                
+            /*} catch (ConnectException ex) {
+                Logger.getLogger(ControladorUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ControladorUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+            }*/
         }
     }
     

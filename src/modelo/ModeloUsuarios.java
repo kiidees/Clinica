@@ -26,7 +26,7 @@ public class ModeloUsuarios {
         ControladorUsuarios control = new ControladorUsuarios(vista, modelo);
         control.iniciar();
         vista.setVisible(true);
-        vista.jLabelBienvenido.setText("HOLA, BIENVENIDO DOCTOR "+nombre);
+        vista.jLabelBienvenido.setText("HOLA, BIENVENIDO ADMINISTRADOR "+nombre);
         //Botenes desabilitados
         /*vista.jButton1.setEnabled(false);
         vista.jButton2.setEnabled(false);
