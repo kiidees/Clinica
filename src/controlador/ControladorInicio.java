@@ -20,8 +20,8 @@ public class ControladorInicio implements ActionListener {
         this.vista = vista;
         this.modelo = modelo;
         this.vista.btnLogin.addActionListener(this);
-
-    }
+        
+}
 
     public void inicia() {
 
@@ -32,10 +32,12 @@ public class ControladorInicio implements ActionListener {
 
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
 
         try {
             modelo.IniciaSesion();
+            vista.setVisible(false);
         } catch (ConnectException | ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ControladorInicio.class.getName()).log(Level.SEVERE, null, ex);
         }

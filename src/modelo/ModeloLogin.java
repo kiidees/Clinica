@@ -6,29 +6,23 @@ import java.net.ConnectException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import vista.VistaBajas;
 import vista.VistaRegistro;
 
 public class ModeloLogin {
+    
+    VistaRegistro vista = new VistaRegistro();
+    ModeloRegistro modelo = new ModeloRegistro();
 
     public void Registro() throws ConnectException, ClassNotFoundException, SQLException{
-        VistaRegistro vista = new VistaRegistro();
-        ModeloRegistro modelo = new ModeloRegistro();
+        
         controlador.ControladorRegistro control = new controlador.ControladorRegistro(vista, modelo);
-        control.iniciar();
-        vista.setVisible(true);
-}
-    
-    public void Bajas() throws ConnectException, ClassNotFoundException, SQLException{
-        VistaBajas vista = new VistaBajas();
-        ModeloBajas modelo = new ModeloBajas();
-        controlador.ControladorBajas control = new controlador.ControladorBajas(vista, modelo);
         control.iniciar();
         vista.setVisible(true);
 }
     
     private String usuario;
     private String password;
+    public boolean stad;
 
     //public Conexion conect = new Conexion().conectar();
     public Conexion conect = new Conexion();
@@ -58,10 +52,19 @@ public class ModeloLogin {
         this.password = password;
     }
 
+    public boolean isStad() {
+        return stad;
+    }
+
+    public void setStad(boolean stad) {
+        this.stad = stad;
+    }
+    
     public void verificaUsuario() throws SQLException, Exception {
         boolean estado = false;
         boolean estadoUsuario = false;
         ResultSet resultados = conect.consultar("select * from usuarios where rfcusuario = '" + this.usuario + "' and estado = TRUE");
+        ModeloUsuarios mostrarVista = new ModeloUsuarios();
 
         if (resultados.next()) {
             try {//comienza desencriptacion desde BD
@@ -71,17 +74,25 @@ public class ModeloLogin {
                 //termina desencriptacion
                 if (passUnsure.equals(this.password)) {
                     if (estadoUsuario == true) {
+                        vista.setVisible(false);
                         System.out.println("Usuario Activo");
+                        estado = true;
                         int tipoUsuario = Integer.parseInt(resultados.getString(2)); //acceso de usuario
                         switch (tipoUsuario) {
                             case 1:
-                                /*aqui se implementa el nivel de acceso*/ System.out.println("Administrador");
+                                /*aqui se implementa el nivel de acceso*/
+                                mostrarVista.inicioAdministrador(resultados.getString(7));
+                                System.out.println("Administrador");
                                 break;
                             case 2:
-                                /*aqui se implementa el nivel de acceso*/ System.out.println("Doctor");
+                                /*aqui se implementa el nivel de acceso*/
+                                mostrarVista.iniciaDoctor(resultados.getString(7));
+                                System.out.println("Doctor");
                                 break;
                             case 3:
-                                /*aqui se implementa el nivel de acceso*/ System.out.println("Ayudante de doctor");
+                                /*aqui se implementa el nivel de acceso*/
+                                mostrarVista.inicioAyudante(resultados.getString(7));
+                                System.out.println("Ayudante de doctor");
                                 break;
                             default:
                                 throw new AssertionError();
@@ -94,7 +105,7 @@ public class ModeloLogin {
                     JOptionPane.showMessageDialog(null, "Verifica tu Usuario y Contraseña");
                 }
 
-                estado = true;
+                
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -102,7 +113,8 @@ public class ModeloLogin {
             JOptionPane.showMessageDialog(null, "Verifica tu Usuario y Contraseña");
             estado = false;
         }
-
+        this.setStad(estado);
+        //return estado;
     }
 
 }

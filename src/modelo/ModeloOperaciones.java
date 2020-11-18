@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package modelo;
 
 import BD.Conexion;
@@ -7,12 +12,15 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import org.postgresql.util.PSQLException;
 
-public class ModeloBajas {
+/**
+ *
+ * @author juanf
+ */
+public class ModeloOperaciones {
     
     private String RFC;
-
     public Conexion conect = new Conexion();
-    
+
     public String getRFC() {
         return RFC;
     }
@@ -47,5 +55,5 @@ public class ModeloBajas {
         }
 
     }
-            
+    
 }

@@ -19,6 +19,7 @@ public class NewMain {
         Base64 base = new Base64();
         System.out.println(base.encode("adjfhaskjdfh$%/%!"));
         System.out.println("adjfhaskjdfh$%/%!".length());
+        System.out.println(base.decode("aG9sYQ=="));
     }
     
 }

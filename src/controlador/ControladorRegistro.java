@@ -7,8 +7,7 @@ import java.net.ConnectException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import modelo.ModeloRegistro;
-import org.postgresql.util.PSQLException;
+import javax.swing.ImageIcon;
 import vista.VistaRegistro;
 
 public class ControladorRegistro implements ActionListener {
@@ -19,19 +18,31 @@ public class ControladorRegistro implements ActionListener {
         this.vista = vista;
         this.modelo = modelo;
         this.vista.btnRegistrar.addActionListener(this);
-        this.modelo.conect.conectar();
+        this.vista.btnCancelar.addActionListener(this);
     }
     
     public void iniciar(){
-        vista.setTitle("Registrar Nuevo Usuario");
+        vista.setTitle("Hesi-Re v1.0.0");
         vista.setLocationRelativeTo(null);
         vista.setResizable(false);
-        
+        vista.setIconImage(new ImageIcon(getClass().getResource("/icon/tooth.png")).getImage());
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+                
+        if(e.getSource() == vista.btnCancelar){
+            try {
+                mvc.MVC.main(null);
+            } catch (ConnectException ex) {
+                Logger.getLogger(ControladorRegistro.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ControladorRegistro.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorRegistro.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            vista.setVisible(false);
+        }
         if(e.getSource() == vista.btnRegistrar){
             modelo.setUsuario(vista.txtNombre.getText());
             modelo.setApellidos(vista.txtApellidos.getText());
@@ -40,7 +51,8 @@ public class ControladorRegistro implements ActionListener {
             modelo.setEstado(Boolean.parseBoolean(vista.txtEstado.getText()));
             modelo.setPassword(vista.txtContraseña.getText());
             modelo.setPassconfirmation(vista.txtConfContraseña.getText());
-            modelo.setTelefono(Integer.parseInt(vista.txtTelefono.getText().substring(10)));
+            modelo.setTelefono(Long.parseLong(vista.txtTelefono.getText()));
+            //modelo.setTelefono(Integer.parseInt("123"));
             modelo.setDireccion(vista.txtDireccion.getText());
             try {
                 modelo.registroUsuario();
