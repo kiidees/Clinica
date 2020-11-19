@@ -99,10 +99,12 @@ public class ModelAnadir {
             try {
                 if (resultados.getString(1).equals(this.getRfcPaciente()) && resultados.getString(6).equals(doctor)) {
                     JOptionPane.showMessageDialog(null, "Se encontro el paciente");
+                    this.getVistaAna().panelDatos.setVisible(true);
                     this.getVistaAna().btnBuscar.setEnabled(true);
                     this.getVistaAna().btnModificar.setEnabled(true);
                     this.getVistaAna().btnSiguiente.setEnabled(true);
                     this.getVistaAna().btnGuardar.setEnabled(false);
+                    this.getVistaAna().txtRFCusuario.setEnabled(false);
                     this.getVistaAna().txtApellidos.setText(resultados.getString(3));
                     this.getVistaAna().txtNombre.setText(resultados.getString(2));
                     this.getVistaAna().txtDireccion.setText(resultados.getString(4));
@@ -117,7 +119,11 @@ public class ModelAnadir {
             }
         } else {
             JOptionPane.showMessageDialog(null, "Hubo un error o no se encontro el rfc del paciente");
+            this.getVistaAna().panelDatos.setVisible(true);
+                    this.getVistaAna().txtRFCusuario.setEnabled(true);
             this.getVistaAna().btnGuardar.setEnabled(true);
+            this.getVistaAna().btnModificar.setEnabled(false);
+                    this.getVistaAna().btnGuardar.setEnabled(true);
         }
     }
     
@@ -187,6 +193,7 @@ public class ModelAnadir {
                 this.vistaAna.btnModificar.setEnabled(false);
                 this.vistaAna.btnSiguiente.setEnabled(true);
             }
+            else JOptionPane.showMessageDialog(null, "¡Verifica los datos de tu paciente!");
         } catch (Exception e) {
         }
 

@@ -42,6 +42,7 @@ public class ControladorAnadir implements ActionListener{
         vistaAnadir.btnGuardar.setEnabled(false);
         vistaAnadir.btnModificar.setEnabled(false);
         vistaAnadir.btnSiguiente.setEnabled(false);
+        vistaAnadir.panelDatos.setVisible(false);
     }
     
     @Override
