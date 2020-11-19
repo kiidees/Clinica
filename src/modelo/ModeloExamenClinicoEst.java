@@ -3,9 +3,11 @@ package modelo;
 import BD.Conexion;
 import controlador.ControladorLogin;
 import java.net.ConnectException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import org.postgresql.util.PSQLException;
+import vista.VistaExamenClinicoEst;
 
 public class ModeloExamenClinicoEst {
     
@@ -17,8 +19,17 @@ public class ModeloExamenClinicoEst {
     private String paladarBlando;
     private String paladarDuro;
     private String observaciones;
+    private int idIngreso;
+    private VistaExamenClinicoEst vista;
+    Conexion modConf = ControladorLogin.obtenerConexion();
 
-    public Conexion conect = new Conexion();
+    public VistaExamenClinicoEst getVista() {
+        return vista;
+    }
+
+    public void setVista(VistaExamenClinicoEst vista) {
+        this.vista = vista;
+    }
     
     public String getLabios() {
         return labios;
@@ -85,12 +96,16 @@ public class ModeloExamenClinicoEst {
     }
     
     public void registroExamenClinicoEst() throws SQLException, ConnectException, PSQLException, ClassNotFoundException {
-        Conexion modConf = ControladorLogin.obtenerConexion();
-
+        
+        ResultSet resultados = modConf.consultar("select id_ingresopac from ingreso_pacientes");
         try {
-            if (modConf.ejecutar("INSERT INTO examen_clinico_estomatologico (\"Labios\", \"Mejillas\", \"Lengua\", \"Carrillos\", \"PisoDeBoca\", \"PaladarBlando\", \"PaladarDuro\", \"Observaciones\") \n" 
-                    + "VALUES ('"+ this.labios + "', '" + this.mejillas +"', '"+ this.lengua +"', '" + this.carrillos + "', '" + this.pisoDeBoca + "', '" + this.paladarBlando + "', '" + this.paladarDuro + "', '" + this.observaciones + "')")) {
+             while (resultados.next()) {
+                idIngreso = resultados.getInt(1);
+            }
+            if (modConf.ejecutar("INSERT INTO \"Examen_Clinico_Estomatologico\" (id_examen_clinico, \"Labios\", \"Mejillas\", \"Lengua\", \"Carrillos\", \"PisoDeBoca\", \"PaladarBlando\", \"PaladarDuro\", \"Observaciones\", id_ingresopac) \n" +
+"	VALUES ("+idIngreso+", '"+this.labios+"', '"+this.mejillas+"', '"+this.lengua+"', '"+this.carrillos+"', '"+this.pisoDeBoca+"', '"+this.paladarBlando+"', '"+this.paladarDuro+"', '"+this.observaciones+"', "+idIngreso+")")) {
                 JOptionPane.showMessageDialog(null, "¡Datos correctamente registrados!");
+                this.getVista().setVisible(false);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "¡Verifica los datos introducidos!" + e.getMessage());

@@ -31,7 +31,6 @@ public class ControladorServEstom implements ActionListener{
     
     public void iniciar(){
         vistaserv.setTitle("Hesi-Re v1.0.0");
-        vistaserv.setLocation(50, 0);
         vistaserv.setLocationRelativeTo(null);
         vistaserv.setSize(1280, 720);
         vistaserv.setResizable(false);
@@ -55,6 +54,7 @@ public class ControladorServEstom implements ActionListener{
                 modeloestom.setP3(vistaserv.txtMtvoActual.getText());
                 modeloestom.confirmar();
                 modeloestom.setVista(vistaserv);
+                vistaserv.setVisible(false);
             } catch (ConnectException ex) {
                 Logger.getLogger(ControladorServEstom.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {

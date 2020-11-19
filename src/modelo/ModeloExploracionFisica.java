@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import org.postgresql.util.PSQLException;
 import vista.VistaExamenClinicoEst;
+import vista.VistaExploracionFisica;
 
 public class ModeloExploracionFisica {
     
@@ -19,8 +20,17 @@ public class ModeloExploracionFisica {
     private String estadoActual;
     private String observaciones;
     private int idIngreso;
+    private VistaExploracionFisica vistaexplo;
     public Conexion conect = new Conexion();
 
+    public VistaExploracionFisica getVistaexplo() {
+        return vistaexplo;
+    }
+
+    public void setVistaexplo(VistaExploracionFisica vistaexplo) {
+        this.vistaexplo = vistaexplo;
+    }
+    
     public String getCara() {
         return cara;
     }
@@ -84,7 +94,7 @@ public class ModeloExploracionFisica {
                 VistaExamenClinicoEst vece = new VistaExamenClinicoEst();
                 ControladorExamenClinicoEst cece = new ControladorExamenClinicoEst(vece, mece);
                 cece.iniciar();
-                
+                this.getVistaexplo().setVisible(false);
             } else {
                 JOptionPane.showMessageDialog(null, "¡Datos ya registrados!");
             }

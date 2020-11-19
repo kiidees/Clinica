@@ -153,7 +153,7 @@ public class ModelAnadir {
     }
 
     public void actualizar() throws SQLException, ConnectException, PSQLException, ClassNotFoundException {
-        
+
         try {
             /*if (modConf.ejecutar("UPDATE pacientes SET "
                     + "nombrepaciente = '"+this.nombrePaciente+"' "
@@ -161,11 +161,11 @@ public class ModelAnadir {
                     + "domiciliopaciente = '"+this.domicilioPaciente+"' "
                     + "telefono = "+this.telefonoPaciente+" "
                     + "WHERE rfc_paciente = '"+this.rfcPaciente+"'")) */
-            if(modConf.ejecutar("UPDATE pacientes SET nombrepaciente = '"+this.nombrePaciente+"', \n" +
-"apellidospaciente = '"+this.apellidosPaciente+"', \n" +
-"domiciliopaciente = '"+this.domicilioPaciente+"', \n" +
-"telefono = "+this.telefonoPaciente+" \n" +
-"WHERE rfc_paciente = '"+this.rfcPaciente+"'")){
+            if (modConf.ejecutar("UPDATE pacientes SET nombrepaciente = '" + this.nombrePaciente + "', \n"
+                    + "apellidospaciente = '" + this.apellidosPaciente + "', \n"
+                    + "domiciliopaciente = '" + this.domicilioPaciente + "', \n"
+                    + "telefono = " + this.telefonoPaciente + " \n"
+                    + "WHERE rfc_paciente = '" + this.rfcPaciente + "'")) {
                 JOptionPane.showMessageDialog(null, "¡Datos correctamente actualizados!");
                 this.vistaAna.btnGuardar.setEnabled(false);
                 this.vistaAna.btnBuscar.setEnabled(false);

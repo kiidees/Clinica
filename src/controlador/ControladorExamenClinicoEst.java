@@ -27,6 +27,7 @@ public class ControladorExamenClinicoEst implements ActionListener {
         vista.setResizable(false);
         vista.setVisible(true);
         vista.setIconImage(new ImageIcon(getClass().getResource("/icon/tooth.png")).getImage());
+        modelo.setVista(vista);
     }
 
     @Override

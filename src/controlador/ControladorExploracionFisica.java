@@ -27,6 +27,7 @@ public class ControladorExploracionFisica implements ActionListener {
         vista.setResizable(false);
         vista.setIconImage(new ImageIcon(getClass().getResource("/icon/tooth.png")).getImage());
         vista.setVisible(true);
+        modelo.setVistaexplo(vista);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
