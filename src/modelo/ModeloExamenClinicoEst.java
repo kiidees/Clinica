@@ -1,12 +1,14 @@
 package modelo;
 
 import BD.Conexion;
+import controlador.ControladorAntPat;
 import controlador.ControladorLogin;
 import java.net.ConnectException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import org.postgresql.util.PSQLException;
+import vista.VistaAntPatol;
 import vista.VistaExamenClinicoEst;
 
 public class ModeloExamenClinicoEst {
@@ -106,6 +108,11 @@ public class ModeloExamenClinicoEst {
 "	VALUES ("+idIngreso+", '"+this.labios+"', '"+this.mejillas+"', '"+this.lengua+"', '"+this.carrillos+"', '"+this.pisoDeBoca+"', '"+this.paladarBlando+"', '"+this.paladarDuro+"', '"+this.observaciones+"', "+idIngreso+")")) {
                 JOptionPane.showMessageDialog(null, "¡Datos correctamente registrados!");
                 this.getVista().setVisible(false);
+                
+                ModeloAntPat modantpat = new ModeloAntPat();
+                VistaAntPatol vistaantpat = new VistaAntPatol();
+                ControladorAntPat controlantpat = new ControladorAntPat(vistaantpat, modantpat);
+                controlantpat.iniciar();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "¡Verifica los datos introducidos!" + e.getMessage());
